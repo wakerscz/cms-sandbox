@@ -12,7 +12,7 @@ wakers-propel:
                     classname: Propel\Runtime\Connection\ProfilerConnectionWrapper
                     dsn: 'mysql:host=mariadb;dbname=wakers_cms_db'
                     user: root
-                    password:
+                    password: root
                     attributes:
                     settings:
                         charset: utf8
