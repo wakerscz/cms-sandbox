@@ -15,15 +15,15 @@
         "php": ">=7.2",
         "propel/propel": "dev-master#8dc9f567e77d7e2ae7f6d9878dbb435f7fd7feed",
         "nette/nette": "^2.4.0",
-        "wakers/nette-propel2": "v0.9.1",
         "nette/forms": "v2.4.x-dev",
-        "wakers/cms-base-module": "dev-master",
-        "wakers/cms-user-module": "dev-master",
-        "wakers/cms-category-module": "dev-master",
-        "wakers/cms-lang-module": "dev-master",
-        "wakers/cms-onpage-module": "dev-master",
-        "wakers/cms-page-module": "dev-master",
-        "wakers/cms-structure-module": "dev-master"
+        "wakerscz/nette-propel2": "v0.9.1",
+        "wakerscz/cms-base-module": "dev-master",
+        "wakerscz/cms-user-module": "dev-master",
+        "wakerscz/cms-category-module": "dev-master",
+        "wakerscz/cms-lang-module": "dev-master",
+        "wakerscz/cms-onpage-module": "dev-master",
+        "wakerscz/cms-page-module": "dev-master",
+        "wakerscz/cms-structure-module": "dev-master"
     },
     "require-dev": {
         "kdyby/console": "^2.7",
