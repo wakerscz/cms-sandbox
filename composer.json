@@ -10,6 +10,7 @@
     }],
 	"description": "Sandbox for Wakers CMS 5",
 	"type": "project",
+    "version": "v0.0.1",
     "minimum-stability": "dev",
 	"require": {
         "php": ">=7.2",
