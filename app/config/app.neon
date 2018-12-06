@@ -5,6 +5,7 @@ application:
         App: Wakers\App\Presenter\*Presenter
         *: Wakers\*Module\Presenter\*Presenter
 
+
 tracy:
     editor: 'phpstorm://open?file=%file&line=%line'
     email: zapletal@wakers.cz
