@@ -1,5 +1,5 @@
 {
-	"name": "wakers/app",
+	"name": "wakers/cms-sandbox",
     "homepage": "http://www.wakers.cz/cms",
     "license": "MIT",
     "authors": [{
@@ -8,7 +8,7 @@
         "homepage": "http://www.wakers.cz",
         "role": "Developer"
     }],
-	"description": "Wakers CMS 5 based on Nette Framework",
+	"description": "Sandbox for Wakers CMS 5",
 	"type": "project",
     "minimum-stability": "stable",
 	"require": {
