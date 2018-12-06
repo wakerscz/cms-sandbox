@@ -10,16 +10,16 @@
  */
 
 // Page - Add Form
-import '../../../vendor/wakers/cms-page-module/src/assets/Frontend/add-form/js/addForm'
+import '../../../vendor/wakerscz/cms-page-module/src/assets/Frontend/add-form/js/addForm'
 
 // OnPage - OG & SEO checker
-import '../../../vendor/wakers/cms-onpage-module/src/assets/Frontend/onpage/js/ogSeoChecker'
+import '../../../vendor/wakerscz/cms-onpage-module/src/assets/Frontend/onpage/js/ogSeoChecker'
 
 // Category - Category modal
-import '../../../vendor/wakers/cms-category-module/src/assets/Frontend/modal/js/modal'
+import '../../../vendor/wakerscz/cms-category-module/src/assets/Frontend/modal/js/modal'
 
 // Structure - Structure modal
-import '../../../vendor/wakers/cms-structure-module/src/assets/Frontend/structure-modal/js/fileForm'
+import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/structure-modal/js/fileForm'
 
 // Util / Node - TinyMCE
 import '../../../node_modules/tinymce/tinymce'
@@ -32,8 +32,8 @@ import '../../../node_modules/tinymce/plugins/table/plugin'
 import '../../../node_modules/tinymce/plugins/paste/plugin'
 import '../../../node_modules/tinymce/plugins/image/plugin'
 import '../../../node_modules/tinymce/plugins/nonbreaking/plugin'
-import '../../../vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce_cs'
-import '../../../vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce'
+import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce_cs'
+import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce'
 
 /*
     STYLES

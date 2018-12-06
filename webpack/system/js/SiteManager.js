@@ -13,7 +13,7 @@
 import '../../../node_modules/jquery/src/jquery';
 
 // Lang - Translate
-import '../../../vendor/wakers/cms-lang-module/src/assets/Common/translate/js/translate'
+import '../../../vendor/wakerscz/cms-lang-module/src/assets/Common/translate/js/translate'
 
 // App - Translations
 import '../../../i18n/system'
@@ -23,25 +23,25 @@ import 'script-loader!../../../node_modules/popper.js/dist/umd/popper.min';
 
 // Base / Node - Bootstrap 4
 import 'script-loader!../../../node_modules/bootstrap/dist/js/bootstrap.min';
-import '../../../vendor/wakers/cms-base-module/src/assets/SiteManager/bootstrap/js/bootstrap';
+import '../../../vendor/wakerscz/cms-base-module/src/assets/SiteManager/bootstrap/js/bootstrap';
 
 // Base / Node Nette AJAX
 import 'script-loader!../../../node_modules/nette.ajax.js/nette.ajax';
-import '../../../vendor/wakers/cms-base-module/src/assets/Common/ajax/js/ajax';
+import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/ajax/js/ajax';
 
 // Base / Node - Nette Forms & Live Validation
-import 'script-loader!../../../vendor/wakers/cms-base-module/src/assets/SiteManager/nette/js/liveValidation';
+import 'script-loader!../../../vendor/wakerscz/cms-base-module/src/assets/SiteManager/nette/js/liveValidation';
 import 'script-loader!../../../node_modules/live-form-validation/live-form-validation';
 
 // Base / Node - Notifications
 import 'script-loader!../../../node_modules/lobibox/js/notifications';
-import 'script-loader!../../../vendor/wakers/cms-base-module/src/assets/Common/notification/js/notification';
+import 'script-loader!../../../vendor/wakerscz/cms-base-module/src/assets/Common/notification/js/notification';
 
 // Base - Progress button
-import '../../../vendor/wakers/cms-base-module/src/assets/Common/progress-button/js/progressButton';
+import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/progress-button/js/progressButton';
 
 // Base - Wakers Run
-import '../../../vendor/wakers/cms-base-module/src/assets/Common/run/js/run';
+import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/run/js/run';
 
 
 /*

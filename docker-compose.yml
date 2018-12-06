@@ -110,14 +110,14 @@ services:
       # static assets
       - ./assets/static:/app/assets/static:delegated
 
-      - ./vendor/wakers/cms-base-module/src/assets:/app/vendor/wakers/cms-base-module/src/assets:delegated
-      - ./vendor/wakers/cms-user-module/src/assets:/app/vendor/wakers/cms-user-module/src/assets:delegated
-      - ./vendor/wakers/cms-onpage-module/src/assets:/app/vendor/wakers/cms-onpage-module/src/assets:delegated
-      - ./vendor/wakers/cms-page-module/src/assets:/app/vendor/wakers/cms-page-module/src/assets:delegated
-      - ./vendor/wakers/cms-util-module/src/assets:/app/vendor/wakers/cms-util-module/src/assets:delegated
-      - ./vendor/wakers/cms-lang-module/src/assets:/app/vendor/wakers/cms-lang-module/src/assets:delegated
-      - ./vendor/wakers/cms-category-module/src/assets:/app/vendor/wakers/cms-category-module/src/assets:delegated
-      - ./vendor/wakers/cms-structure-module/src/assets:/app/vendor/wakers/cms-structure-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-base-module/src/assets:/app/vendor/wakerscz/cms-base-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-user-module/src/assets:/app/vendor/wakerscz/cms-user-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-onpage-module/src/assets:/app/vendor/wakerscz/cms-onpage-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-page-module/src/assets:/app/vendor/wakerscz/cms-page-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-util-module/src/assets:/app/vendor/wakerscz/cms-util-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-lang-module/src/assets:/app/vendor/wakerscz/cms-lang-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-category-module/src/assets:/app/vendor/wakerscz/cms-category-module/src/assets:delegated
+      - ./vendor/wakerscz/cms-structure-module/src/assets:/app/vendor/wakerscz/cms-structure-module/src/assets:delegated
 
       - ./i18n:/app/i18n:delegated
     networks:

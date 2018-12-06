@@ -9,11 +9,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
 
 // Base - Variables
-@import '../../../vendor/wakers/cms-base-module/src/assets/Common/_variables/scss/variables';
+@import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/_variables/scss/variables';
 
 // Utils - TinyMCE
-@import "../../../vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/scss/skin";
-@import "../../../vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/scss/tinymce";
+@import "../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/scss/skin";
+@import "../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/scss/tinymce";
 
 // OnPage - Loader
-@import '../../../vendor/wakers/cms-onpage-module/src/assets/Frontend';
+@import '../../../vendor/wakerscz/cms-onpage-module/src/assets/Frontend';
