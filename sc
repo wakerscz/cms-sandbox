@@ -221,7 +221,7 @@ wakers_deploy()
 
 
     echo -e "\nBUILDING ASSETS ------------\n"
-    wakers_npm "npm" "run" "gulp-prod"
+    wakers_npm "npm" "run" "prod"
 
     # run migrations or show new database
     if [ -e ./app/config/db.local.neon ]
