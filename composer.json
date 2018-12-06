@@ -1,5 +1,5 @@
 {
-	"name": "wakers/cms-sandbox",
+    "name": "wakers/cms-sandbox",
     "homepage": "http://www.wakers.cz/cms",
     "license": "MIT",
     "authors": [{
@@ -8,26 +8,26 @@
         "homepage": "http://www.wakers.cz",
         "role": "Developer"
     }],
-	"description": "Sandbox for Wakers CMS 5",
-	"type": "project",
+    "description": "Sandbox for Wakers CMS 5",
+    "type": "project",
     "version": "v0.0.3",
     "minimum-stability": "stable",
-	"require": {
+    "require": {
         "php": ">=7.2",
         "propel/propel": "dev-master#8dc9f567e77d7e2ae7f6d9878dbb435f7fd7feed",
         "nette/nette": "^2.4.0",
-		"wakers/nette-propel2": "v0.9.1",
-		"nette/forms": "v2.4.x-dev",
-		"wakers/cms-base-module": "dev-master",
-		"wakers/cms-user-module": "dev-master",
-		"wakers/cms-category-module": "dev-master",
-		"wakers/cms-lang-module": "dev-master",
-		"wakers/cms-onpage-module": "dev-master",
-		"wakers/cms-page-module": "dev-master",
-		"wakers/cms-structure-module": "dev-master"
+        "wakers/nette-propel2": "v0.9.1",
+        "nette/forms": "v2.4.x-dev",
+        "wakers/cms-base-module": "dev-master",
+        "wakers/cms-user-module": "dev-master",
+        "wakers/cms-category-module": "dev-master",
+        "wakers/cms-lang-module": "dev-master",
+        "wakers/cms-onpage-module": "dev-master",
+        "wakers/cms-page-module": "dev-master",
+        "wakers/cms-structure-module": "dev-master"
     },
-	"require-dev": {
+    "require-dev": {
         "kdyby/console": "^2.7",
         "kdyby/nette-session-panel": "^3.4"
-	}
+    }
 }
