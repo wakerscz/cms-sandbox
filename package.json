@@ -1,0 +1,44 @@
+{
+    "name": "wakers-cms",
+    "author": "Jiří Zapletal <zapletal@wakers.cz>",
+    "homepage": "http://www.wakers.cz/cms",
+    "description": "Wakers CMS 5 based on Nette Framework",
+    "license": "MIT",
+    "dependencies": {
+        "bootstrap-sass": "^3.3.7",
+        "font-awesome": "^4.7.0",
+        "imagesloaded": "^4.1.3",
+        "isotope-layout": "^3.0.4",
+        "lightbox2": "^2.10.0",
+        "owl.carousel": "^2.2.0"
+    },
+    "devDependencies": {
+        "animate-sass": "^0.8.2",
+        "bootstrap": "^4.1.3",
+        "clean-webpack-plugin": "^0.1.19",
+        "css-loader": "^1.0.0",
+        "file-loader": "^2.0.0",
+        "jquery": "^3.3.1",
+        "live-form-validation": "github:contributte/live-form-validation#cfb4c1a2c9102b5c6b198a04bb579ee83bf9b5e8",
+        "lobibox": "^1.2.7",
+        "mini-css-extract-plugin": "^0.4.3",
+        "nette.ajax.js": "^2.3.0",
+        "node-sass": "^4.10.0",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "popper.js": "^1.14.4",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^7.1.0",
+        "script-loader": "^0.7.2",
+        "style-loader": "^0.23.0",
+        "tinymce": "^4.8.5",
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "webpack": "^4.20.2",
+        "webpack-cli": "^3.1.2",
+        "webpack-manifest-plugin": "^2.0.4"
+    },
+    "scripts": {
+        "dev": "webpack --mode development",
+        "watch": "webpack --mode development --watch",
+        "prod": "webpack --mode production"
+    }
+}

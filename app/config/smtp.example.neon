@@ -1,0 +1,36 @@
+parameters:
+    smtp:
+
+        exceptions:
+            sender:
+                name: 'Wakers.cz CMS 5.0'
+                email: 'cms@wakers.cz'
+                to: 'zapletal@wakers.cz'
+
+            config:
+                host: 'smtp-relay.gmail.com'
+                username: 'zapletal@wakers.cz'
+                password: ''
+                secure: 'ssl'
+
+
+        resetPassword:
+            sender:
+                name: 'Wakers CMS 5.0'
+                email: 'info@wakers.cz'
+            config:
+                host: 'smtp-relay.gmail.com'
+                username: 'zapletal@wakers.cz'
+                password: ''
+                secure: 'ssl'
+
+
+        createUser:
+            sender:
+                name: 'Wakers CMS 5.0'
+                email: 'info@wakers.cz'
+            config:
+                host: 'smtp-relay.gmail.com'
+                username: 'zapletal@wakers.cz'
+                password: ''
+                secure: 'ssl'

@@ -1,0 +1,19 @@
+/**
+ * Copyright (c) 2018 Wakers.cz
+ *
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *
+ */
+
+// Ubuntu Font
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
+// Base - Variables
+@import '../../../vendor/wakers/cms-base-module/src/assets/Common/_variables/scss/variables';
+
+// Utils - TinyMCE
+@import "../../../vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/scss/skin";
+@import "../../../vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/scss/tinymce";
+
+// OnPage - Loader
+@import '../../../vendor/wakers/cms-onpage-module/src/assets/Frontend';

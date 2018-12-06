@@ -1,0 +1,109 @@
+{**
+ * Copyright (c) 2018 Wakers.cz
+ *
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *
+ *}
+
+{extends './../../../vendor/wakers/cms-page-module/src/Presenter/templates/@layout.latte'}
+{import './../structure/_buttons.latte'}
+
+{block onContent}
+
+    <div style="background-color: #eee; padding: 30px;">
+
+        <h1>Homepage</h1>
+
+        {* Static navigation - by recipeSlug *}
+        <h2>Static menu 1 - recipeSlug</h2>
+
+        {include btn-structure-add 'settings' => [
+            'slug' => 'staticke-menu-one',
+            'add' => 'Přidat položku menu'
+        ]}
+
+        {snippet sp-1}
+            {control structurePrinter [
+                'method' => 'findRecursiveByRecipeSlugsAndPage',
+                'params' => [
+                    'recipeSlugs' => [
+                        'staticke-menu-one'
+                    ],
+                    'sort' => 'ASC'
+                ],
+                'template' => 'static/navbar.latte'
+            ]}
+        {/snippet}
+
+
+        {* Dynamic navigation - by categorySlugs[] *}
+        <h2>Dynamic menu 1 - categorySlugs[]</h2>
+
+        {include btn-structure-add 'settings' => [
+            'slug' => 'navbar-one',
+            'add' => 'Přidat položku menu'
+        ]}
+
+        {snippet sp-2}
+            {control structurePrinter [
+                'method' => 'findRecursiveByCategorySlugs',
+                'params' => [
+                    'categorySlugs' => [
+                        'navigacni-menu-jedna'
+                    ],
+                    'sort' => 'ASC'
+                ],
+                'template' => 'static/navbar.latte'
+            ]}
+        {/snippet}
+
+
+        {* Just include view (by current page) *}
+        {include content}
+
+
+        {* Dynamic navigation - by categorySlugs[] *}
+        <h2>Dynamic menu 2 - categorySlugs[]</h2>
+
+        {include btn-structure-add 'settings' => [
+            'slug' => 'navbar-two',
+            'add' => 'Přidat položku menu'
+        ]}
+
+        {snippet sp-49}
+            {control structurePrinter [
+                'method' => 'findRecursiveByCategorySlugs',
+                'params' => [
+                    'categorySlugs' => [
+                        'navigacni-menu-dve'
+                    ],
+                    'sort' => 'ASC'
+                ],
+                'template' => 'static/navbar.latte'
+            ]}
+        {/snippet}
+
+
+        {* Static navigation - by recipeSlug *}
+        <h2>Static menu 2 - recipeSlugs</h2>
+
+        {include btn-structure-add 'settings' => [
+            'slug' => 'staticke-menu-two',
+            'add' => 'Přidat položku menu'
+        ]}
+
+        {snippet sp-50}
+            {control structurePrinter [
+                'method' => 'findRecursiveByRecipeSlugsAndPage',
+                'params' => [
+                    'recipeSlugs' => [
+                        'staticke-menu-two'
+                    ],
+                    'sort' => 'ASC'
+                ],
+                'template' => 'static/navbar.latte'
+            ]}
+        {/snippet}
+    </div>
+
+{/block}

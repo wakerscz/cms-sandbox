@@ -1,0 +1,34 @@
+{**
+ * Copyright (c) 2018 Wakers.cz
+ *
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *
+ *}
+
+{import './../_buttons.latte'}
+
+{var $rows = $rows['descendants']}
+
+{block rows}
+    <ul>
+        {foreach $rows as $row}
+            <li style="padding: 10px; background-color: #ccc; margin-top: 3px">
+                {var $url = $row['item']->getPageUrl('link')}
+                <a n:if="$url" href="{plink :App:Run:setUrl $url->getUrl()}">
+                    {$row['item']->getId()} {$row['item']->getContent('title')}
+                </a>
+
+                {include btn-structure-edrm 'settings' => [
+                    'slug' => $row['item']->getSlug(),
+                    'id' => $row['item']->getId(),
+                    'edit' => 'Upravit položku menu',
+                    'remove' => 'Odstranit položku menu'
+                ]}
+
+                {if count($row['descendants']) > 0}
+                    {include rows 'rows' => $row['descendants']}
+                {/if}
+            </li>
+        {/foreach}
+    </ul>
+{/block}

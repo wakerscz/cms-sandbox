@@ -1,0 +1,6 @@
+/vendor
+/node_modules
+/www/temp
+/app/config/*.local.neon
+/docker/*.local*
+/docker-compose.override.yml

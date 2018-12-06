@@ -1,0 +1,26 @@
+{**
+ * Copyright (c) 2018 Wakers.cz
+ *
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *
+ *}
+
+{block content}
+
+
+<h2>Detail aktuality</h2>
+
+{snippet sp-21}
+    {control structurePrinter [
+        'method' => 'findRecursiveByRecipeSlugsAndPage',
+        'params' => [
+            'recipeSlugs' => [
+                'news',
+                'news-extended'
+            ],
+            'sort' => 'DESC',
+            'page' => $presenter->template->pageEntity
+        ],
+        'template' => 'dynamic/newsDetail.latte'
+    ]}
+{/snippet}

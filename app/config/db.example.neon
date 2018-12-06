@@ -1,0 +1,44 @@
+wakers-propel:
+    propel:
+
+        general:
+            project: Wakers CMS 5
+            version: 5
+
+        database:
+            connections:
+                wakers_cms:
+                    adapter: mysql
+                    classname: Propel\Runtime\Connection\ProfilerConnectionWrapper
+                    dsn: 'mysql:host=mariadb;dbname=wakers_cms_db'
+                    user: root
+                    password:
+                    attributes:
+                    settings:
+                        charset: utf8
+
+        runtime:
+            defaultConnection: wakers_cms
+            connections:
+                - wakers_cms
+
+        generator:
+            defaultConnection: wakers_cms
+            connections:
+                - wakers_cms
+            tablePrefix: wakers_
+            dateTime:
+                dateTimeClass: \Nette\Utils\DateTime
+
+        paths:
+            schemaDir: './app/schema'
+            outputDir: './app/schema'
+            phpDir: './temp/propel'
+            migrationDir: './app/schema/migration'
+            sqlDir: './app/schema/sql'
+
+        reverse:
+            connection: wakers_cms
+
+        migrations:
+            tableName: 1_propel_migration

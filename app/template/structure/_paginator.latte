@@ -1,0 +1,44 @@
+{**
+ * Copyright (c) 2018 Wakers.cz
+ *
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *
+ *}
+
+{if $paginator && $paginator->pageCount > 1}
+
+
+    {var $url = $presenter->template->pageEntity->getPageUrl()->getUrl()}
+
+    <h2>Stránkování</h2>
+
+    <ul class="pagination">
+        <li class="page-item {if $paginator->isFirst()}disabled{/if}">
+            <a href={plink :App:Run:setUrl 'url' => $url, 'pagination' => 1}"" class="page-link">První</a>
+        </li>
+
+        {if !$paginator->isFirst()}
+            <li class="page-item {if $paginator->isFirst()}disabled{/if}">
+                <a class="page-link" href="{plink :App:Run:setUrl 'url' => $url, 'pagination' => $paginator->page-1}">Předchozí</a>
+            </li>
+        {/if}
+
+        {for $i = ($paginator->page - 3); $i < ($paginator->page + 3); $i++}
+            {if $i > 0 && $i <= $paginator->pageCount}
+                <li class="page-item {if $paginator->page ===  $i}active{/if}">
+                    <a class="page-link" href="{plink :App:Run:setUrl 'url' => $url, 'pagination' => $i}">{$i}</a>
+                </li>
+            {/if}
+        {/for}
+
+        {if !$paginator->isLast()}
+            <li class="page-item {if $paginator->isLast()}disabled{/if}">
+                <a class="page-link" href="{plink :App:Run:setUrl 'url' => $url, 'pagination' => $paginator->page+1}">Další</a>
+            </li>
+        {/if}
+
+        <li class="page-item {if $paginator->isLast()}disabled{/if}">
+            <a class="page-link" href="{plink :App:Run:setUrl 'url' => $url, 'pagination' => $paginator->pageCount}">Poslední</a>
+        </li>
+    </ul>
+{/if}

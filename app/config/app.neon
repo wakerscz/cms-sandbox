@@ -1,0 +1,59 @@
+application:
+    catchExceptions: false #change to true for production-mode
+    errorPresenter: Base:Error
+    mapping:
+        App: Wakers\App\Presenter\*Presenter
+        *: Wakers\*Module\Presenter\*Presenter
+
+tracy:
+    editor: 'phpstorm://open?file=%file&line=%line'
+    email: zapletal@wakers.cz
+    maxDepth: 6
+
+
+session:
+	expiration: 6 hours
+
+
+services:
+    IPrinterRepository: Wakers\App\Repository\PrinterRepository
+
+    mail.mailer: Wakers\BaseModule\Debugger\SmtpMailer(%smtp%)
+    routerFactory: Wakers\BaseModule\Router\RouterFactory(%adminModules%)
+    router: @routerFactory::createRouter
+
+
+parameters:
+
+    baseDomain: http://localhost/ # Kvůli přesměrování starých URL
+
+    adminLang: cs # defaultní jazyk administrace
+
+    adminModules: # moduly dostupné v site-manageru (přes routu)
+        - base
+        - user
+        #- mini-shop
+
+    adminNavBar: # navigační menu v site-manageru
+        #- mini-shop-module/src/component/Admin/NavBar/templates/minishop.latte
+
+    frontendDashboard:
+        - cms-user-module/src/Component/Frontend/DashboardModal/templates/aboutUser.latte
+        - cms-onpage-module/src/Component/Frontend/DashboardModal/templates/onPageBoxes.latte
+        - cms-page-module/src/Component/Frontend/DashboardModal/templates/pageBoxes.latte
+        - cms-user-module/src/Component/Frontend/DashboardModal/templates/userBoxes.latte
+        - cms-category-module/src/Component/Frontend/DashboardModal/templates/categoryBoxes.latte
+        - cms-structure-module/src/Component/Frontend/DashboardModal/templates/structureBoxes.latte
+        - cms-lang-module/src/Component/Frontend/DashboardModal/templates/langBoxes.latte
+
+includes:
+    - smtp.local.neon
+
+    # wakers-modules
+    - ./../../vendor/wakers/cms-base-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-user-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-onpage-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-page-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-lang-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-category-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-structure-module/src/config/config.neon

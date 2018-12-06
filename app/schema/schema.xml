@@ -1,0 +1,38 @@
+<database name="wakers_cms" namespace="Wakers" defaultIdMethod="native"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd"
+>
+    <!-- user-module -->
+    <external-schema filename="./../../vendor/wakers/cms-user-module/src/schema/user.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-user-module/src/schema/userRole.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-user-module/src/schema/userPersonalData.xml" referenceOnly="FALSE"/>
+
+    <!-- lang-module -->
+    <external-schema filename="./../../vendor/wakers/cms-lang-module/src/schema/lang.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-lang-module/src/schema/langSystem.xml" referenceOnly="FALSE"/>
+
+    <!-- page-module -->
+    <external-schema filename="./../../vendor/wakers/cms-page-module/src/schema/page.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-page-module/src/schema/pageUrl.xml" referenceOnly="FALSE"/>
+
+    <!-- on-page-module -->
+    <external-schema filename="./../../vendor/wakers/cms-onpage-module/src/schema/onPagePrimary.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-onpage-module/src/schema/onPageSocial.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-onpage-module/src/schema/onPageRedirect.xml" referenceOnly="FALSE"/>
+
+    <!-- category-module -->
+    <external-schema filename="./../../vendor/wakers/cms-category-module/src/schema/category.xml" referenceOnly="FALSE"/>
+
+    <!-- structure-module -->
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/recipe.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/recipeSlug.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/recipeCategoryAllowed.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/recipeVariable.xml" referenceOnly="FALSE"/>
+
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/structure.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/structureValue.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/structureValueFile.xml" referenceOnly="FALSE"/>
+
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/structureInPage.xml" referenceOnly="FALSE"/>
+    <external-schema filename="./../../vendor/wakers/cms-structure-module/src/schema/structureInCategory.xml" referenceOnly="FALSE"/>
+</database>

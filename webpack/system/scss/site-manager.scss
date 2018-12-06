@@ -1,0 +1,26 @@
+/**
+ * Copyright (c) 2018 Wakers.cz
+ *
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *
+ */
+
+// Ubuntu Font
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
+
+// Base - Variables
+@import '../../../vendor/wakers/cms-base-module/src/assets/Common/_variables/scss/variables';
+
+// Base - Progress Button
+@import "../../../vendor/wakers/cms-base-module/src/assets/Common/progress-button/scss/progress-button";
+
+// Base - Loader
+@import "../../../vendor/wakers/cms-base-module/src/assets/SiteManager";
+
+// User - Loader
+@import "../../../vendor/wakers/cms-user-module/src/assets/SiteManager";
+
+
+// Font Awesome 4.7.0
+@import "../../../node_modules/font-awesome/scss/font-awesome";

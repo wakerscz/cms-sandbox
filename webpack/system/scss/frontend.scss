@@ -1,0 +1,20 @@
+/*
+    REQUIRED BY SYSTEM
+ */
+
+// Base - Variables
+@import '../../../vendor/wakers/cms-base-module/src/assets/Common/_variables/scss/variables';
+
+// Base - Loader
+@import "../../../vendor/wakers/cms-base-module/src/assets/Frontend";
+
+// Node - Animate CSS
+@import '~animate-sass/helpers/settings';
+@import '~animate-sass/helpers/mixins';
+@import '~animate-sass/helpers/base';
+@import '~animate-sass/animations/fade-enter/fadeIn';
+@import '~animate-sass/animations/fade-exit/fadeOut';
+
+
+// Custom web
+@import "../../Custom";
