@@ -11,50 +11,50 @@
     <div style="border: 1px solid red; padding:  20px">
 
         {include btn-structure-edrm 'settings' => [
-            'slug' => $row->getSlug(),
-            'id' => $row->getId(),
+            'slug' => $row->getRecipeSlug(),
+            'id' => $row->getStructureId(),
             'edit' => 'Upravit',
             'remove' => 'Odstranit'
         ]}
 
-        <h3>{$row->getContent('text')}</h3>
+        <h3>{$row->getValContent('text')}</h3>
     </div>
 {/define}
 
 {define news}
     <div style="border: 1px solid #00b0f0; padding: 20px; margin-top: 20px">
         {include btn-structure-edrm 'settings' => [
-            'slug' => $row->getSlug(),
-            'id' => $row->getId(),
+            'slug' => $row->getRecipeSlug(),
+            'id' => $row->getStructureId(),
             'edit' => 'Upravit aktualitu',
             'remove' => 'Odstranit aktualitu'
         ]}
 
-        <h3>{$row->getContent('title')}</h3>
+        <h3>{$row->getValContent('title')}</h3>
 
         <div>
             <h4>Description</h4>
-            {$row->getContent('description')|noescape}
+            {$row->getValContent('description')|noescape}
         </div>
 
-        <div>Tel: {$row->getContent('phone')}</div>
+        <div>Tel: {$row->getValContent('phone')}</div>
 
-        <div>Mail: {$row->getContent('email')}</div>
+        <div>Mail: {$row->getValContent('email')}</div>
 
-        <div>Date: {$row->getContent('date')}</div>
+        <div>Date: {$row->getValContent('date')}</div>
 
-        <div>Datetime: {$row->getContent('datetime')}</div>
+        <div>Datetime: {$row->getValContent('datetime')}</div>
 
-        <div>linkExternal: {$row->getContent('linkExternal')}</div>
+        <div>linkExternal: {$row->getValContent('linkExternal')}</div>
 
-        <div>selectBox: {$row->getContent('selectBox')}</div>
+        <div>selectBox: {$row->getValContent('selectBox')}</div>
 
         <div>
             <h4>Test</h4>
-            {$row->getContent('test')|noescape}
+            {$row->getValContent('test')|noescape}
         </div>
 
-        {var $url = $row->getPageUrl('linkInternal')}
+        {var $url = $row->getValUrl('linkInternal')}
 
         <div n:if="$url">
             <a href="{plink :App:Run:setUrl $url->getUrl()}" target="_blank">
@@ -63,12 +63,12 @@
         </div>
 
         <h4>Images</h4>
-        {foreach $row->getFiles('images') as $file}
+        {foreach $row->getValFiles('images') as $file}
             <img src="{img $file->getProtectedFile(), '200x200', 'FILL'}" alt="{$file->getTitle()}">
         {/foreach}
 
         <h4>Files</h4>
-        {foreach $row->getFiles('files') as $file}
+        {foreach $row->getValFiles('files') as $file}
             <a href="{file $file->getProtectedFile()}" title="{$file->getTitle()}">{$file->getName()}</a><br>
         {/foreach}
 
@@ -90,7 +90,7 @@
 ]}
 
 {foreach $rows['descendants'] as $row}
-    {if $row['item']->getSlug() === 'news'}
+    {if $row['item']->getRecipeSlug() === 'news'}
         {include news 'row' => $row['item'], 'descendants' => $row['descendants']}
     {*else}
         <h2>Nepřiřazeno</h2>

@@ -13,14 +13,14 @@
     <ul>
         {foreach $rows as $row}
             <li style="padding: 10px; background-color: #ccc; margin-top: 3px">
-                {var $url = $row['item']->getPageUrl('link')}
+                {var $url = $row['item']->getValUrl('link')}
                 <a n:if="$url" href="{plink :App:Run:setUrl $url->getUrl()}">
-                    {$row['item']->getId()} {$row['item']->getContent('title')}
+                    {$row['item']->getStructureId()} {$row['item']->getValContent('title')}
                 </a>
 
                 {include btn-structure-edrm 'settings' => [
-                    'slug' => $row['item']->getSlug(),
-                    'id' => $row['item']->getId(),
+                    'slug' => $row['item']->getRecipeSlug(),
+                    'id' => $row['item']->getStructureId(),
                     'edit' => 'Upravit položku menu',
                     'remove' => 'Odstranit položku menu'
                 ]}

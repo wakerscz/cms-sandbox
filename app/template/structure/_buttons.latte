@@ -57,3 +57,11 @@
         </a>
     {/if}
 {/define}
+
+{define published}
+    {if !$row->isPagePublished()}
+        <div class="wakers_alert red">
+            Cílová pod-stránka není publikována, tuto položku vidíte pouze jako admin.
+        </div>
+    {/if}
+{/define}

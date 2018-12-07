@@ -114,7 +114,6 @@ services:
       - ./vendor/wakerscz/cms-user-module/src/assets:/app/vendor/wakerscz/cms-user-module/src/assets:delegated
       - ./vendor/wakerscz/cms-onpage-module/src/assets:/app/vendor/wakerscz/cms-onpage-module/src/assets:delegated
       - ./vendor/wakerscz/cms-page-module/src/assets:/app/vendor/wakerscz/cms-page-module/src/assets:delegated
-      - ./vendor/wakerscz/cms-util-module/src/assets:/app/vendor/wakerscz/cms-util-module/src/assets:delegated
       - ./vendor/wakerscz/cms-lang-module/src/assets:/app/vendor/wakerscz/cms-lang-module/src/assets:delegated
       - ./vendor/wakerscz/cms-category-module/src/assets:/app/vendor/wakerscz/cms-category-module/src/assets:delegated
       - ./vendor/wakerscz/cms-structure-module/src/assets:/app/vendor/wakerscz/cms-structure-module/src/assets:delegated
