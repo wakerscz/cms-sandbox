@@ -23,6 +23,9 @@
 
 {define news}
     <div style="border: 1px solid #00b0f0; padding: 20px; margin-top: 20px">
+
+        {include published 'row' => $row}
+
         {include btn-structure-edrm 'settings' => [
             'slug' => $row->getRecipeSlug(),
             'id' => $row->getStructureId(),

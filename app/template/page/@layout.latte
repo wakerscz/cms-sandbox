@@ -14,7 +14,7 @@
 
         <h1>Homepage</h1>
 
-        {* Static navigation - by recipeSlug *}
+
         <h2>Static menu 1 - recipeSlug</h2>
 
         {include btn-structure-add 'settings' => [
@@ -29,14 +29,13 @@
                     'recipeSlugs' => [
                         'staticke-menu-one'
                     ],
-                    'sort' => 'ASC'
+                    'sort' => 'ASC',
                 ],
                 'template' => 'static/navbar.latte'
             ]}
         {/snippet}
 
 
-        {* Dynamic navigation - by categorySlugs[] *}
         <h2>Dynamic menu 1 - categorySlugs[]</h2>
 
         {include btn-structure-add 'settings' => [
@@ -49,9 +48,9 @@
                 'method' => 'findRecursiveByCategorySlugs',
                 'params' => [
                     'categorySlugs' => [
-                        'navigacni-menu-jedna'
+                        'navigacni-menu-dve'
                     ],
-                    'sort' => 'ASC'
+                    'sort' => 'ASC',
                 ],
                 'template' => 'static/navbar.latte'
             ]}
@@ -62,7 +61,6 @@
         {include content}
 
 
-        {* Dynamic navigation - by categorySlugs[] *}
         <h2>Dynamic menu 2 - categorySlugs[]</h2>
 
         {include btn-structure-add 'settings' => [
@@ -77,14 +75,13 @@
                     'categorySlugs' => [
                         'navigacni-menu-dve'
                     ],
-                    'sort' => 'ASC'
+                    'sort' => 'ASC',
                 ],
                 'template' => 'static/navbar.latte'
             ]}
         {/snippet}
 
 
-        {* Static navigation - by recipeSlug *}
         <h2>Static menu 2 - recipeSlugs</h2>
 
         {include btn-structure-add 'settings' => [
@@ -99,7 +96,8 @@
                     'recipeSlugs' => [
                         'staticke-menu-two'
                     ],
-                    'sort' => 'ASC'
+                    'sort' => 'ASC',
+
                 ],
                 'template' => 'static/navbar.latte'
             ]}

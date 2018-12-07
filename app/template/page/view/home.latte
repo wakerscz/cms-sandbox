@@ -14,11 +14,11 @@
         'method' => 'findByCategorySlugs',
         'params' => [
             'categorySlugs' => [
-                'aktuality',
-                'news'
+                'aktuality'
             ],
             'paginationLimit' => 1,
-            'sort' => 'DESC'
+            'sort' => 'DESC',
+            'filterByPagePublished' => TRUE
         ],
         'template' => 'dynamic/homepageNews.latte'
     ]}
