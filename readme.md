@@ -1,78 +1,59 @@
 # Wakers CMS 5
 
-Redakční systém založený na Nette frameworku 2.4 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
+CMS založený na Nette 2.4 a PHP 7.2 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
 
+## Instalace
 
-## Autoři:
+🐳 Povinné pouze v případě použití Dockeru.
 
-- Jiří Zapletal [zapletal@wakers.cz](mailto:zapletal@wakers.cz)
+### Závislosti pro instalaci v Dockeru
+- 🐳 Docker 18.23.2
+- 🐳 Docker compose 1.23.2
 
-## Základní instalace a nastavení
+#### Na OSX
+- 🐳 Composer 1.7.2
 
-1. Naklonování repozitáře (`git clone`).
-2. Vytvoření a nastavení configů `db.local.neon` a `smtp.local.neon`.
-3. Vytvoření a nastavení Xdebug configu `xdebug.local.ini`.
-4. Instalace závislostí `composer i`, `npm i`.
-5. Vygenerování GULP assets (`gulp --env dev`).
-7. Sestavení a spuštění Docker containeru (`docker-compose up --build --d`).
-8. Nastavení Docker CLI PHP interpretu v PHPStormu.
-9. Nastavení Xdebug mapování v PHPStormu (`/<local-path>/my-project → /app`).
+#### Na Windows
+- 🐳 Composer 1.7.2
+- 🐳 NodeJS 8.12
+- 🐳 NPM 6.4.1
 
+### Závislosti pro instalaci bez Dockeru
+- Nginx 1.15.4
+- MariaDB 10.1.34
+- PHP 7.2-fpm
+- NodeJS 8.12
+- NPM 6.4.1
+- Composer 1.7.2
 
-### Tipy na úvod
+### Výběr shortuct souboru
 
-1. Přepnutí se do Docker containeru: `docker exec -it app bash`.
-2. Spuštění PHP příkazu v containeru: `php <command>`.
-3. Spuštění Symfony konzole: `php /app/index.php <symfony_command>`
+**TODO:** dodělat zkratky - zatím je podporován pouze OSX / Unix.
 
-### Nastavení nového webu 1. krok
+**❗ Existují 3 shell soubory pro práci s konzolovými příkazy, vyberte pouze jeden ./sc/...**
+- Aplikace bude v Dockeru.
+  - Můj systém je OSX / Unix: `./sc/dk-unix`.
+  - Můj systém je Windows: `./sc/dk-win`.
+- Aplikace nebude v Dockeru: `./sc/no-dk`.
 
-1. Vytvoření databáze s kódováním `utf8_general_ci` v admineru [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: root`).
-2. Sestavení databázového schématu v `./app/schema/schema.xml`.
-3. Vytvoření databázových tabulek (`propel:migration:diff`, `propel:migration:migrate`).
-4. Vygenerování active-record tříd (`propel:model:build`).
-5. Sestavení `adminModules`, `adminNavBar` a `frontendDashboard` v `./app/config/app.neon`.
-6. Načtení modulových configů v `./app/config/app.neon`.
+### Základní instalace a nastavení
+1. Vytvoření projektu do `composer create-project wakerscz/cms-sandbox --stability dev`).
+2. Nastavení Xdebug configu `xdebug.local.ini` (podle `xdebug.example.ini`, ale na svou síťovou IP).
+3. 🐳 Sestavení a spuštění Docker containeru (`docker-compose up --build --d`).
+4. Vytvoření databáze s kódováním `utf8_general_ci`.
+   - 🐳 Úprava hesla pro root uživatele v admineru [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <hash-vygenerovaný-do-konzole-při-sestavení-containeru>`).
+5. Vytvoření a nastavení configů `db.local.neon` a `smtp.local.neon` (podle `*.example.neon` souborů).
+6. Úprava konfigu v `app.neon`.
+7. Nastavení CLI PHP interpretu v PHPStormu.
+8. Nastavení Xdebug mapování v PHPStormu (`/<local-path>/my-project → /app`).
+9. Instalace závislostí `./sc/... composer i`, `./sc/... npm i`.
+10. Vygenerování assets (`./sc/... webpack-dev`).
+11. Vytvoření databázových tabulek `./sc/... propel migration:migrate`.
+12. Vygenerování active-record tříd`./sc/... propel model:build`.
+13. Vytvoření jazyků `./sc/... console wakers:lang-create <lang>`.
+14. Vytvoření úvodních stránek `./sc/... wakers:homepage-create <defaultLang> [layoutName=home.latte]`.
+15. Vytvoření admina `./sc/... wakers:admin-create <email> <password>`.
 
-### Nastavení nového webu 2. krok
-
-1. Vytvoření úvodní stránky `wakers:homepage-create`.
-2. Otestování webu na [http://localhost](http://localhost).
-
-### Nastavení nového webu 3. krok
-
-1. Vytvoření nového uživatele `wakers:admin-create <email> <password>`.
-2. Upravení šablon ve složce `./app/template/*`.
-
-
-## Deploy na DigitalOcean
-
-### První deploy
-
-1. Vytvoření dropletu s docker containerem.
-2. Připojení na droplet pomocí ssh - `ssh root@<server-ip>`.
-3. Naklonování repozitáře - `git clone http://.../some-repo.git project-folder`.
-4. Spuštění deploy scriptu.
-    - `cd ./project-folder`.
-    - `./sc server-deploy` (poznamenat si vygenerované MYSQL root heslo).
-5. Vytvoření databáze a uživatele s omezeným oprávněním.
-    - `http://<server-ip>:9876`.
-    - `u: root`, `p: <poznamenané heslo>`.
-5. Nastavení configů.
-    - `cd ./app/config`.
-    - `cp db.example.neon db.local.neon`.
-    - `cp smtp.example.neon smtp.local.neon`.
-    - `nano smtp.local.neon` - upravit hodnoty.
-    - `nano db.local.neon` - upravit hodnoty.
-6. Spustit migraci - `./../../sc server-deploy-migrate`.
-7. `exit`.
-
-### N-tý deploy
-1. Připojení na droplet pomocí ssh
-2. `cd <project-folder>`
-2. `git pull`
-3. `./sc server-deploy`
-
-
-### Typy na konec
-Reload nginxu `docker exec nginx /etc/init.d/nginx reload`
+## Užitečné příkazy
+- Přepnutí se do Docker containeru: `docker exec -it app bash`.
+- Spuštění PHP příkazu v containeru: `docker exec -it app php <command>`.
