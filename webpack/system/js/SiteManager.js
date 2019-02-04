@@ -57,12 +57,6 @@ import 'file-loader?&name=sound/notification/[name].[ext]!./../../../node_module
  */
 
 // Font Awesome 5.7.1
-import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.eot';
-import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.svg';
-import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf';
-import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff';
-import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2';
-
 import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.eot';
 import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.svg';
 import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf';
