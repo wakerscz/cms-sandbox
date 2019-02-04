@@ -12,6 +12,8 @@ tracy:
     editor: 'phpstorm://open?file=%file&line=%line'
     email: zapletal@wakers.cz
     maxDepth: 6
+    editorMapping:
+        /app/app: /Users/jzapletal/www/cms5-sandbox/app
 
 
 session:
