@@ -4,6 +4,8 @@ application:
     mapping:
         App: Wakers\App\Presenter\*Presenter
         *: Wakers\*Module\Presenter\*Presenter
+    scanDirs:
+        - ./../vendor/wakerscz
 
 
 tracy:

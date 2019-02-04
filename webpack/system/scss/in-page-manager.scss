@@ -9,14 +9,14 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
 
 // Base - Variables
-@import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/_variables/scss/variables';
+@import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/_variables/scss/_variables';
 
 // Utils - TinyMCE
-@import "../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/scss/skin";
-@import "../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/scss/tinymce";
+@import "./../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/scss/skin";
+@import "./../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/scss/tinymce";
 
 // OnPage - Loader
-@import '../../../vendor/wakerscz/cms-onpage-module/src/assets/Frontend';
+@import './../../../vendor/wakerscz/cms-onpage-module/src/assets/Frontend';
 
 // Structure - Alert
-@import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/alert/scss/alert';
+@import './../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/alert/scss/alert';

@@ -12,63 +12,63 @@
  */
 
 // Node - jQuery
-import '../../../node_modules/jquery/src/jquery';
+import './../../../node_modules/jquery/src/jquery';
 
 // Lang - Translate
-import '../../../vendor/wakerscz/cms-lang-module/src/assets/Common/translate/js/translate'
+import './../../../vendor/wakerscz/cms-lang-module/src/assets/Common/translate/js/translate'
 
 // App - Translations
-import '../../../i18n/system'
+import './../../../i18n/system'
 
 // Base / Node - Nette AJAX
-import 'script-loader!../../../node_modules/nette.ajax.js/nette.ajax';
-import 'script-loader!../../../vendor/wakerscz/cms-base-module/src/assets/Common/ajax/js/ajax';
+import 'script-loader!./../../../node_modules/nette.ajax.js/nette.ajax';
+import 'script-loader!./../../../vendor/wakerscz/cms-base-module/src/assets/Common/ajax/js/ajax';
 
 // Base / Node - Nette Forms & Live Validation
-import 'script-loader!../../../vendor/wakerscz/cms-base-module/src/assets/Frontend/live-validation/js/liveValidation';
-import 'script-loader!../../../node_modules/live-form-validation/live-form-validation';
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/validator/js/validator'
+import 'script-loader!./../../../vendor/wakerscz/cms-base-module/src/assets/Frontend/live-validation/js/liveValidation';
+import 'script-loader!./../../../node_modules/live-form-validation/live-form-validation';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/validator/js/validator'
 
 // Base / Node - Notifications
-import 'script-loader!../../../node_modules/lobibox/js/notifications';
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/notification/js/notification';
+import 'script-loader!./../../../node_modules/lobibox/js/notifications';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/notification/js/notification';
 
 // Base - Modals
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/modal/js/modal';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/modal/js/modal';
 
 // Base - Dasboard
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/dashboard/js/dashboard';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/dashboard/js/dashboard';
 
 // Base - Progress button
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/progress-button/js/progressButton';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/progress-button/js/progressButton';
 
 // User - Login
-import '../../../vendor/wakerscz/cms-user-module/src/assets/Frontend/login-modal/js/loginModal';
+import './../../../vendor/wakerscz/cms-user-module/src/assets/Frontend/login-modal/js/loginModal';
 
 // Util - Amimate CSS
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/animate/js/animate';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/animate/js/animate';
 
 // Base - Wakers Run
-import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/run/js/run';
+import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/run/js/run';
 
 /*
     IMAGES
  */
 
-import 'file-loader?&name=image/[name].[ext]!../../../assets/static/image/favicon.ico';
+import 'file-loader?&name=image/[name].[ext]!./../../../assets/static/image/favicon.ico';
 
 
 /*
     STYLES (only main file)
  */
 
-import '../scss/frontend.scss';
+import './../scss/frontend.scss';
 
 
 /*
  * Custom web
  */
-import '../../Custom'
+import './../../Custom'
 
 
 

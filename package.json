@@ -4,20 +4,14 @@
     "homepage": "http://www.wakers.cz/cms",
     "description": "Wakers CMS 5 based on Nette Framework",
     "license": "MIT",
-    "dependencies": {
-        "bootstrap-sass": "^3.3.7",
-        "font-awesome": "^4.7.0",
-        "imagesloaded": "^4.1.3",
-        "isotope-layout": "^3.0.4",
-        "lightbox2": "^2.10.0",
-        "owl.carousel": "^2.2.0"
-    },
+    "dependencies": {},
     "devDependencies": {
         "animate-sass": "^0.8.2",
-        "bootstrap": "^4.1.3",
+        "bootstrap": "^4.2.1",
         "clean-webpack-plugin": "^0.1.19",
         "css-loader": "^1.0.0",
         "file-loader": "^2.0.0",
+        "@fortawesome/fontawesome-free": "^5.7.1",
         "jquery": "^3.3.1",
         "live-form-validation": "github:contributte/live-form-validation#cfb4c1a2c9102b5c6b198a04bb579ee83bf9b5e8",
         "lobibox": "^1.2.7",

@@ -3,10 +3,10 @@
  */
 
 // Base - Variables
-@import '../../../vendor/wakerscz/cms-base-module/src/assets/Common/_variables/scss/variables';
+@import './../../../vendor/wakerscz/cms-base-module/src/assets/Common/_variables/scss/_variables';
 
 // Base - Loader
-@import "../../../vendor/wakerscz/cms-base-module/src/assets/Frontend";
+@import "./../../../vendor/wakerscz/cms-base-module/src/assets/Frontend";
 
 // Node - Animate CSS
 @import '~animate-sass/helpers/settings';
@@ -17,4 +17,4 @@
 
 
 // Custom web
-@import "../../Custom";
+@import "./../../Custom";

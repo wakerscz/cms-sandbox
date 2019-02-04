@@ -22,24 +22,24 @@ import '../../../vendor/wakerscz/cms-category-module/src/assets/Frontend/modal/j
 import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/structure-modal/js/fileForm'
 
 // Util / Node - TinyMCE
-import '../../../node_modules/tinymce/tinymce'
-import '../../../node_modules/tinymce/themes/modern/theme'
-import '../../../node_modules/tinymce/plugins/textcolor/plugin'
-import '../../../node_modules/tinymce/plugins/lists/plugin'
-import '../../../node_modules/tinymce/plugins/code/plugin'
-import '../../../node_modules/tinymce/plugins/link/plugin'
-import '../../../node_modules/tinymce/plugins/table/plugin'
-import '../../../node_modules/tinymce/plugins/paste/plugin'
-import '../../../node_modules/tinymce/plugins/image/plugin'
-import '../../../node_modules/tinymce/plugins/nonbreaking/plugin'
-import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce_cs'
-import '../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce'
+import './../../../node_modules/tinymce/tinymce'
+import './../../../node_modules/tinymce/themes/modern/theme'
+import './../../../node_modules/tinymce/plugins/textcolor/plugin'
+import './../../../node_modules/tinymce/plugins/lists/plugin'
+import './../../../node_modules/tinymce/plugins/code/plugin'
+import './../../../node_modules/tinymce/plugins/link/plugin'
+import './../../../node_modules/tinymce/plugins/table/plugin'
+import './../../../node_modules/tinymce/plugins/paste/plugin'
+import './../../../node_modules/tinymce/plugins/image/plugin'
+import './../../../node_modules/tinymce/plugins/nonbreaking/plugin'
+import './../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce_cs'
+import './../../../vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce'
 
 /*
     STYLES
  */
 
-import '../scss/in-page-manager.scss'
+import './../scss/in-page-manager.scss'
 
 
 /*
@@ -47,7 +47,7 @@ import '../scss/in-page-manager.scss'
  */
 
 // Notifications (REQUIRED BY SYSTEM)
-import 'file-loader?&name=sound/notification/[name].[ext]!../../../node_modules/lobibox/sounds/sound4.ogg';
+import 'file-loader?&name=sound/notification/[name].[ext]!./../../../node_modules/lobibox/sounds/sound4.ogg';
 
 
 /*
@@ -55,12 +55,12 @@ import 'file-loader?&name=sound/notification/[name].[ext]!../../../node_modules/
  */
 
 // Node - TinyMCE
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.eot'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.svg'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.ttf'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.woff'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-mobile.woff'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.eot'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.svg'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.ttf'
-import 'file-loader?&name=font/[name].[ext]!../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.woff'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.eot'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.svg'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.ttf'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce.woff'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-mobile.woff'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.eot'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.svg'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.ttf'
+import 'file-loader?&name=font/[name].[ext]!./../../../node_modules/tinymce/skins/lightgray/fonts/tinymce-small.woff'
