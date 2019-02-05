@@ -13,9 +13,11 @@ services:
     restart: "always"
     working_dir: /app
     volumes:
-      - ./docker/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-      - ./docker/xdebug.local.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:ro
+      # PHP Configs
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
+      - ./docker/php/xdebug.local.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:ro
 
+      # Application
       - ./app:/app/app:cached
       - ./i18n:/app/i18n:cached
       - ./assets/dynamic:/app/assets/dynamic:cached
@@ -34,35 +36,44 @@ services:
     restart: "always"
     container_name: nginx
     volumes:
-      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
-      # nginx potřebuje vytáhnout data vygenerované v app containeru
+      # Nginx config
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/servers/http.conf:/etc/nginx/servers/http.conf:ro
+      - ./docker/nginx/servers/https.conf:/etc/nginx/servers/https.conf:ro
+
+      # Certbot certificates
+      - ./docker/certbot.local/etc:/etc/letsencrypt:cached
+      - ./docker/certbot.local/var:/var/lib/letsencrypt:cached
+
+      # Application
       - ./app:/app/app:cached
       - ./assets/dynamic:/app/assets/dynamic:cached
       - ./www:/app/www:cached
       - ./log:/app/log:cached
       - ./temp:/app/temp:cached
       - ./vendor:/app/vendor:cached
-      # https
-      - ./docker/certbot/etc:/etc/letsencrypt:cached
-      - ./docker/certbot/var:/var/lib/letsencrypt:cached
-      - ./docker/certbot/dhparam:/etc/ssl/certs
     networks:
       - wakers
     ports:
       - 80:80
       - 443:443
+    depends_on:
+      - app
 
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - ./docker/certbot/etc:/etc/letsencrypt:cached
-      - ./docker/certbot/var:/var/lib/letsencrypt:cached
+      # Certbot certificates
+      - ./docker/certbot.local/etc:/etc/letsencrypt:cached
+      - ./docker/certbot.local/var:/var/lib/letsencrypt:cached
+
+      # Cerbot .well-known (public) folder
       - ./www:/var/www/html:cached
+    command: certonly --webroot --webroot-path=/var/www/html --email info@wakers.cz --agree-tos --no-eff-email --staging -d ${HTTPS_DOMAIN} #-d ${HTTPS_DOMAIN_WWW}
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email info@wakers.cz --agree-tos --no-eff-email --staging -d ${HTTPS_DOMAIN} -d ${HTTPS_DOMAIN_WWW}
 
 
   mariadb:
@@ -73,8 +84,8 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
     command: mysqld --innodb-flush-method=littlesync --innodb-use-native-aio=OFF --log_bin=ON
     volumes:
-      # mariadb ukládá db mimo container
-      - ./docker/database.local:/var/lib/mysql:cached
+      # Mariadb folder
+      - ./docker/mariadb.local:/var/lib/mysql:cached
     ports:
       - 3306:3306
     networks:

@@ -3,6 +3,5 @@
 /www/temp
 /app/config/*.local.neon
 /docker/*.local*
-/docker/certbot
 /docker-compose.override.yml
 /.env
