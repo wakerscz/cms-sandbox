@@ -47,6 +47,7 @@ Symbol [ 🐳 ] - povinné pouze v případě použití Dockeru.
 1. Vytvoření projektu `composer create-project wakerscz/cms-sandbox --stability dev`.
 1. Nastavení Xdebug configu `./docker/xdebug.local.ini` (podle `./docker/xdebug.example.ini`, na svou síťovou IP).
 1. 🐳 Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`).
+1. 🐳 Nastavení hesla k FTPS pomocí variable `SFTP_PASSWORD` v souboru `.env`.
 1. 🐳 Sestavení a spuštění Docker containeru `docker-compose up --build --d`.
 1. 🐳 Získání hesla k DB `docker-compose logs 2>/dev/null | grep "GENERATED ROOT PASSWORD"` (potřeba zadat 2x).
 1. 🐳 Úprava hesla pro root uživatele v admineru [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <získané-heslo>`).

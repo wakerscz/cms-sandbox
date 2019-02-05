@@ -122,5 +122,19 @@ services:
     networks:
       - wakers
 
+  sftp:
+    container_name: sftp
+    image: atmoz/sftp:alpine-3.7
+    volumes:
+      - ./assets/dynamic:/home/wakerscms/assets/dynamic
+      #- ./temp/cache:/home/wakerscms/temp/cache
+      - ./log:/home/wakerscms/log
+    ports:
+      - "2222:22"
+    command: wakerscms:${SFTP_PASSWORD}:1001
+    networks:
+      - wakers
+
+
 networks:
   wakers:
