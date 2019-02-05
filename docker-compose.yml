@@ -3,6 +3,8 @@ version: '3'
 volumes:
   node_modules:
   vendor:
+  certbot-etc:
+  certbot-var:
 
 services:
 
@@ -34,7 +36,6 @@ services:
     container_name: nginx
     volumes:
       - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
-
       # nginx potřebuje vytáhnout data vygenerované v app containeru
       - ./app:/app/app:cached
       - ./assets/dynamic:/app/assets/dynamic:cached
@@ -42,10 +43,26 @@ services:
       - ./log:/app/log:cached
       - ./temp:/app/temp:cached
       - ./vendor:/app/vendor:cached
+      # https
+      #- ./web-root:/app/www
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
     networks:
       - wakers
     ports:
       - 80:80
+
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - ./www:/var/www/html
+    depends_on:
+      - nginx
+    command: certonly --webroot --webroot-path=/var/www/html --email info@wakers.cz --agree-tos --no-eff-email --staging -d ${HTTPS_DOMAIN}  -d ${HTTPS_DOMAIN_WWW}
 
 
   mariadb:
