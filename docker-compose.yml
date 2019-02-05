@@ -1,10 +1,9 @@
 version: '3'
 
+
 volumes:
   node_modules:
   vendor:
-  certbot-etc:
-  certbot-var:
 
 services:
 
@@ -44,25 +43,26 @@ services:
       - ./temp:/app/temp:cached
       - ./vendor:/app/vendor:cached
       # https
-      #- ./web-root:/app/www
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
+      - ./docker/certbot/etc:/etc/letsencrypt:cached
+      - ./docker/certbot/var:/var/lib/letsencrypt:cached
+      - ./docker/certbot/dhparam:/etc/ssl/certs
     networks:
       - wakers
     ports:
       - 80:80
+      - 443:443
 
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - ./www:/var/www/html
+      - ./docker/certbot/etc:/etc/letsencrypt:cached
+      - ./docker/certbot/var:/var/lib/letsencrypt:cached
+      - ./www:/var/www/html:cached
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email info@wakers.cz --agree-tos --no-eff-email --staging -d ${HTTPS_DOMAIN}  -d ${HTTPS_DOMAIN_WWW}
+    command: certonly --webroot --webroot-path=/var/www/html --email info@wakers.cz --agree-tos --no-eff-email --staging -d ${HTTPS_DOMAIN} -d ${HTTPS_DOMAIN_WWW}
 
 
   mariadb:
