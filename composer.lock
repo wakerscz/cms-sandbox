@@ -2181,12 +2181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-base-module.git",
-                "reference": "dd65ef742307708f2eb82173a220dfd3a984c3fe"
+                "reference": "f21095d45634604824d2219d1118f3b5f6c27863"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-base-module/zipball/dd65ef742307708f2eb82173a220dfd3a984c3fe",
-                "reference": "dd65ef742307708f2eb82173a220dfd3a984c3fe",
+                "url": "https://api.github.com/repos/wakerscz/cms-base-module/zipball/f21095d45634604824d2219d1118f3b5f6c27863",
+                "reference": "f21095d45634604824d2219d1118f3b5f6c27863",
                 "shasum": ""
             },
             "type": "library",
@@ -2209,7 +2209,7 @@
             ],
             "description": "Base module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-06T06:16:05+00:00"
+            "time": "2019-02-06T06:49:20+00:00"
         },
         {
             "name": "wakerscz/cms-category-module",
