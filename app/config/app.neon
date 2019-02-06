@@ -6,6 +6,13 @@ application:
         *: Wakers\*Module\Presenter\*Presenter
     scanDirs:
         - %appDir%/../vendor/wakerscz
+    scanComposer: false
+
+
+http:
+    frames: true
+    headers:
+        X-Powered-By: 'Wakers CMS 5'
 
 
 tracy:
@@ -15,7 +22,8 @@ tracy:
 
 
 session:
-	expiration: 6 hours
+    #autoStart: true
+    expiration: 2 hours
 
 
 services:
