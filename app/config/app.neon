@@ -5,7 +5,7 @@ application:
         App: Wakers\App\Presenter\*Presenter
         *: Wakers\*Module\Presenter\*Presenter
     scanDirs:
-        - ./../vendor/wakerscz
+        - %appDir%/../vendor/wakerscz
 
 
 tracy:

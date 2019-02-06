@@ -1,9 +1,9 @@
 #!/bin/bash
 
 domains=(dev.wakers.cz)
-rsa_key_size=4096
+email="info@wakers.cz"
 data_path="./docker/certbot.local"
-email="info@wakers.cz" # Adding a valid address is strongly recommended
+rsa_key_size=4096
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
 if [ -d "$data_path" ]; then

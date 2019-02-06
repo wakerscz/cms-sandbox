@@ -38,7 +38,8 @@ services:
     volumes:
       # Nginx config
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./docker/nginx/servers/app.conf:/etc/nginx/servers/app.conf:ro
+      - ./docker/nginx/servers/production.conf:/etc/nginx/servers/production.conf:ro
+      - ./docker/nginx/servers/development.conf:/etc/nginx/servers/development.conf:ro
       #- ./docker/nginx/servers/http.conf:/etc/nginx/servers/http.conf:ro
       #- ./docker/nginx/servers/https.conf:/etc/nginx/servers/https.conf:ro
 
