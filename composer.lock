@@ -2181,12 +2181,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-base-module.git",
-                "reference": "f21095d45634604824d2219d1118f3b5f6c27863"
+                "reference": "8b43f7f413ee44031012c8f1e610962c2aa71710"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-base-module/zipball/f21095d45634604824d2219d1118f3b5f6c27863",
-                "reference": "f21095d45634604824d2219d1118f3b5f6c27863",
+                "url": "https://api.github.com/repos/wakerscz/cms-base-module/zipball/8b43f7f413ee44031012c8f1e610962c2aa71710",
+                "reference": "8b43f7f413ee44031012c8f1e610962c2aa71710",
                 "shasum": ""
             },
             "type": "library",
@@ -2209,7 +2209,7 @@
             ],
             "description": "Base module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-06T06:49:20+00:00"
+            "time": "2019-02-06T09:33:10+00:00"
         },
         {
             "name": "wakerscz/cms-category-module",
@@ -2253,12 +2253,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-lang-module.git",
-                "reference": "fccc952eb1f202e09476a7f768f3ce69f5c3d3f8"
+                "reference": "17117021e5074246a7d1a99e0fc1e79611c9f6de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-lang-module/zipball/fccc952eb1f202e09476a7f768f3ce69f5c3d3f8",
-                "reference": "fccc952eb1f202e09476a7f768f3ce69f5c3d3f8",
+                "url": "https://api.github.com/repos/wakerscz/cms-lang-module/zipball/17117021e5074246a7d1a99e0fc1e79611c9f6de",
+                "reference": "17117021e5074246a7d1a99e0fc1e79611c9f6de",
                 "shasum": ""
             },
             "type": "library",
@@ -2281,7 +2281,7 @@
             ],
             "description": "Lang module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2018-12-06T22:04:29+00:00"
+            "time": "2019-02-06T09:33:09+00:00"
         },
         {
             "name": "wakerscz/cms-onpage-module",
