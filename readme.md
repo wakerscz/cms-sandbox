@@ -45,11 +45,10 @@ Symbol [ 🐳 ] - povinné pouze v případě použití Dockeru.
 1. Zastavení všech docker containerů `docker stop $(docker ps -a -q)`.
 1. Kompletní vyčištění dockeru `docker system prune --all -f`
 1. Vytvoření projektu `composer create-project wakerscz/cms-sandbox --stability dev`.
-1. Nastavení Xdebug configu `./docker/xdebug.local.ini` (podle `./docker/xdebug.example.ini`, na svou síťovou IP).
 1. 🐳 Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`).
 1. 🐳 Vytvoření `.env` (podle souboru `.env.example`).
 1. 🐳 Sestavení a spuštění Docker containeru `docker-compose up --build --d`.
-1. 🐳 Získání hesla k DB `docker-compose logs 2>/dev/null | grep "GENERATED ROOT PASSWORD"` (potřeba zadat 2x).
+1. 🐳 Získání hesla k DB `docker-compose logs 2>/dev/null | grep "GENERATED ROOT PASSWORD"`.
 1. 🐳 Úprava hesla pro root uživatele v admineru [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <získané-heslo>`).
 1. Vytvoření databáze s kódováním `utf8_general_ci`.
 1. Vytvoření a nastavení configů `./app/config/db.local.neon` a `./app/config/smtp.local.neon` (podle `./app/config/*.example.neon` souborů).
@@ -71,3 +70,13 @@ Symbol [ 🐳 ] - povinné pouze v případě použití Dockeru.
 ## Možné problémy
 - 🐳 Při generování assets hlásí chybu s neexistujícími soubory / nedostačujícími právy, mělo by stačit pustit `docker-compose restart`.
 - Nezobrazuje se tracy - dumpněte si `var_dump($_SERVER['REMOTE_ADDR'])` a přidejte jí do `./app/bootstrap.php` - `$configurator->setDebugMode(['X.X.X.X']);`.
+
+## Deploy a HTTPS
+Po zprovoznění aplikace na serveru je potřeba:
+
+1. Přepsat, případně přidat názvy domén (dev.wakers.cz) v souborech:
+    - `./init-letsencrypt.sh`.
+    - `./docker/nginx/servers/production.conf`.
+    
+2. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`.
+3. Spustit script `./init-letsencrypt.sh`.

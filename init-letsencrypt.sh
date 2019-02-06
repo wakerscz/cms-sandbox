@@ -2,6 +2,7 @@
 
 domains=(dev.wakers.cz)
 email="info@wakers.cz"
+
 data_path="./docker/certbot.local"
 rsa_key_size=4096
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
