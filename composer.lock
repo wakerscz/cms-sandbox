@@ -2361,12 +2361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-structure-module.git",
-                "reference": "8acec61fea0e70291ae6afb9365c7fe598f04981"
+                "reference": "c5cb559a3d68467bab2732e54373c5bc18485ad2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-structure-module/zipball/8acec61fea0e70291ae6afb9365c7fe598f04981",
-                "reference": "8acec61fea0e70291ae6afb9365c7fe598f04981",
+                "url": "https://api.github.com/repos/wakerscz/cms-structure-module/zipball/c5cb559a3d68467bab2732e54373c5bc18485ad2",
+                "reference": "c5cb559a3d68467bab2732e54373c5bc18485ad2",
                 "shasum": ""
             },
             "type": "library",
@@ -2389,7 +2389,7 @@
             ],
             "description": "Structure module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2018-12-07T04:00:53+00:00"
+            "time": "2019-02-06T07:00:29+00:00"
         },
         {
             "name": "wakerscz/cms-user-module",
