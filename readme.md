@@ -44,7 +44,7 @@ Symbol [ 🐳 ] - povinné pouze v případě použití Dockeru.
 ### Samotná instalace a nastavení
 1. Zastavení všech docker containerů `docker stop $(docker ps -a -q)`.
 1. Kompletní vyčištění dockeru `docker system prune --all -f`
-1. Vytvoření projektu `composer create-project wakerscz/cms-sandbox --stability dev`.
+1. Vytvoření projektu `composer create-project wakers/cms-sandbox --stability dev`.
 1. 🐳 Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`).
 1. 🐳 Vytvoření `.env` (podle souboru `.env.example`).
 1. 🐳 Sestavení a spuštění Docker containeru `docker-compose up --build --d`.
