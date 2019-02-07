@@ -28,7 +28,7 @@ services:
     expose:
       - 9000
     networks:
-      - wakers
+      - wakers-network
 
 
   nginx:
@@ -55,7 +55,7 @@ services:
       - ./temp:/app/temp:cached
       - ./vendor:/app/vendor:cached
     networks:
-      - wakers
+      - wakers-network
     ports:
       - "80:80"
       - "443:443"
@@ -73,7 +73,7 @@ services:
       - ./docker/certbot.local/www:/var/www/certbot:cached
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     networks:
-      - wakers
+      - wakers-network
     depends_on:
       - nginx
 
@@ -91,7 +91,7 @@ services:
     ports:
       - 3306:3306
     networks:
-      - wakers
+      - wakers-network
 
 
   adminer:
@@ -101,7 +101,7 @@ services:
     ports:
       - 9876:80
     networks:
-      - wakers
+      - wakers-network
 
 
   composer:
@@ -115,7 +115,7 @@ services:
       - vendor:/app/vendor # exclude from fix
       - ./vendor:/app/vendor:delegated
     networks:
-      - wakers
+      - wakers-network
 
 
   nodejs:
@@ -149,7 +149,7 @@ services:
 
       - ./i18n:/app/i18n:delegated
     networks:
-      - wakers
+      - wakers-network
 
   sftp:
     container_name: sftp
@@ -163,8 +163,8 @@ services:
       - "2222:22"
     command: wakerscms:${SFTP_PASSWORD}:1001
     networks:
-      - wakers
+      - wakers-network
 
 
 networks:
-  wakers:
+  wakers-network:

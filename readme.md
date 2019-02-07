@@ -56,7 +56,7 @@ Symbol [ 🐳 ] - povinné pouze v případě použití Dockeru.
 1. Nastavení CLI PHP interpretu v PHPStormu.
 1. Nastavení Xdebug mapování v PHPStormu `/<local-path>/my-project → /app`.
 1. Instalace závislostí `./sc/... composer i`, `./sc/... npm i`.
-1. Vygenerování assets `./sc/... webpack-dev`.
+1. Vygenerování assets `./sc/... gulp-dev`.
 1. Vygenerování DB active-record tříd`./sc/... propel model:build`.
 1. Vytvoření databázových tabulek `./sc/... propel migration:migrate`.
 1. Vytvoření jazyku `./sc/... console wakers:lang-create <lang>`.
