@@ -28,7 +28,7 @@ module.exports = function ()
             './node_modules/jquery/dist/jquery.js',
 
             // Lang - Translate
-            './vendor/wakerscz/cms-lang-module/src/assets/Common/translate/js/translate.js',
+            './vendor/wakers/cms-lang-module/src/assets/Common/translate/js/translate.js',
 
             // App - Translations
             './i18n/system.js',
@@ -38,25 +38,25 @@ module.exports = function ()
 
             // Base / Node - Bootstrap 4
             './node_modules/bootstrap/dist/js/bootstrap.min.js',
-            './vendor/wakerscz/cms-base-module/src/assets/SiteManager/bootstrap/js/bootstrap.js',
+            './vendor/wakers/cms-base-module/src/assets/SiteManager/bootstrap/js/bootstrap.js',
 
             // Base / Node Nette AJAX
             './node_modules/nette.ajax.js/nette.ajax.js',
-            './vendor/wakerscz/cms-base-module/src/assets/Common/ajax/js/ajax.js',
+            './vendor/wakers/cms-base-module/src/assets/Common/ajax/js/ajax.js',
 
             // Base / Node - Nette Forms & Live Validation
-            './vendor/wakerscz/cms-base-module/src/assets/SiteManager/nette/js/liveValidation.js',
+            './vendor/wakers/cms-base-module/src/assets/SiteManager/nette/js/liveValidation.js',
             './node_modules/live-form-validation/live-form-validation.js',
 
             // Base / Node - Notifications
             './node_modules/lobibox/js/notifications.js',
-            './vendor/wakerscz/cms-base-module/src/assets/Common/notification/js/notification.js',
+            './vendor/wakers/cms-base-module/src/assets/Common/notification/js/notification.js',
 
             // Base - Progress button
-            './vendor/wakerscz/cms-base-module/src/assets/Common/progress-button/js/progressButton.js',
+            './vendor/wakers/cms-base-module/src/assets/Common/progress-button/js/progressButton.js',
 
             // Base - Wakers Run
-            './vendor/wakerscz/cms-base-module/src/assets/Common/run/js/run.js',
+            './vendor/wakers/cms-base-module/src/assets/Common/run/js/run.js',
         ],
 
         file:

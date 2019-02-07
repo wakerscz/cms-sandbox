@@ -5,7 +5,7 @@ application:
         App: Wakers\App\Presenter\*Presenter
         *: Wakers\*Module\Presenter\*Presenter
     scanDirs:
-        - %appDir%/../vendor/wakerscz
+        - %appDir%/../vendor/wakers
     scanComposer: false
 
 
@@ -61,10 +61,10 @@ includes:
     - smtp.local.neon
 
     # wakers-modules
-    - ./../../vendor/wakerscz/cms-base-module/src/config/config.neon
-    - ./../../vendor/wakerscz/cms-user-module/src/config/config.neon
-    - ./../../vendor/wakerscz/cms-onpage-module/src/config/config.neon
-    - ./../../vendor/wakerscz/cms-page-module/src/config/config.neon
-    - ./../../vendor/wakerscz/cms-lang-module/src/config/config.neon
-    - ./../../vendor/wakerscz/cms-category-module/src/config/config.neon
-    - ./../../vendor/wakerscz/cms-structure-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-base-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-user-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-onpage-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-page-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-lang-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-category-module/src/config/config.neon
+    - ./../../vendor/wakers/cms-structure-module/src/config/config.neon

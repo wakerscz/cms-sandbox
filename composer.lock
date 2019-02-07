@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52e2783c3fe63509aaecf243a198a800",
+    "content-hash": "d6986c74557dae6378555e0662c7841a",
     "packages": [
         {
             "name": "latte/latte",
@@ -1889,7 +1889,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -2176,17 +2176,17 @@
             "time": "2018-11-05T15:10:59+00:00"
         },
         {
-            "name": "wakerscz/cms-base-module",
+            "name": "wakers/cms-base-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-base-module.git",
-                "reference": "bbe5e6803bb6f885c6bd346087df81012083eb20"
+                "reference": "c0e68312189eb50a57a5b931dd215f604cc7b33b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-base-module/zipball/bbe5e6803bb6f885c6bd346087df81012083eb20",
-                "reference": "bbe5e6803bb6f885c6bd346087df81012083eb20",
+                "url": "https://api.github.com/repos/wakerscz/cms-base-module/zipball/c0e68312189eb50a57a5b931dd215f604cc7b33b",
+                "reference": "c0e68312189eb50a57a5b931dd215f604cc7b33b",
                 "shasum": ""
             },
             "type": "library",
@@ -2209,20 +2209,20 @@
             ],
             "description": "Base module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-07T05:17:47+00:00"
+            "time": "2019-02-07T05:46:40+00:00"
         },
         {
-            "name": "wakerscz/cms-category-module",
+            "name": "wakers/cms-category-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-category-module.git",
-                "reference": "df7dfecb36ed9f159cf98e5398c2a33e33af4877"
+                "reference": "ad2258ee12ebb3603796679ad908e74da12cfccc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-category-module/zipball/df7dfecb36ed9f159cf98e5398c2a33e33af4877",
-                "reference": "df7dfecb36ed9f159cf98e5398c2a33e33af4877",
+                "url": "https://api.github.com/repos/wakerscz/cms-category-module/zipball/ad2258ee12ebb3603796679ad908e74da12cfccc",
+                "reference": "ad2258ee12ebb3603796679ad908e74da12cfccc",
                 "shasum": ""
             },
             "type": "library",
@@ -2245,20 +2245,20 @@
             ],
             "description": "Category module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2018-12-06T09:24:06+00:00"
+            "time": "2019-02-07T05:46:39+00:00"
         },
         {
-            "name": "wakerscz/cms-lang-module",
+            "name": "wakers/cms-lang-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-lang-module.git",
-                "reference": "17117021e5074246a7d1a99e0fc1e79611c9f6de"
+                "reference": "82136819d015a7c66ac638e3e1a3f807da23591e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-lang-module/zipball/17117021e5074246a7d1a99e0fc1e79611c9f6de",
-                "reference": "17117021e5074246a7d1a99e0fc1e79611c9f6de",
+                "url": "https://api.github.com/repos/wakerscz/cms-lang-module/zipball/82136819d015a7c66ac638e3e1a3f807da23591e",
+                "reference": "82136819d015a7c66ac638e3e1a3f807da23591e",
                 "shasum": ""
             },
             "type": "library",
@@ -2281,20 +2281,20 @@
             ],
             "description": "Lang module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-06T09:33:09+00:00"
+            "time": "2019-02-07T05:46:40+00:00"
         },
         {
-            "name": "wakerscz/cms-onpage-module",
+            "name": "wakers/cms-onpage-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-onpage-module.git",
-                "reference": "c5711916481f6aee8e2a5e983cb51e38516f2a33"
+                "reference": "8c4ceb94fe40f958478c6aa297a655fdb0be287b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-onpage-module/zipball/c5711916481f6aee8e2a5e983cb51e38516f2a33",
-                "reference": "c5711916481f6aee8e2a5e983cb51e38516f2a33",
+                "url": "https://api.github.com/repos/wakerscz/cms-onpage-module/zipball/8c4ceb94fe40f958478c6aa297a655fdb0be287b",
+                "reference": "8c4ceb94fe40f958478c6aa297a655fdb0be287b",
                 "shasum": ""
             },
             "type": "library",
@@ -2317,20 +2317,20 @@
             ],
             "description": "OnPage module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2018-12-06T07:20:23+00:00"
+            "time": "2019-02-07T05:46:39+00:00"
         },
         {
-            "name": "wakerscz/cms-page-module",
+            "name": "wakers/cms-page-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-page-module.git",
-                "reference": "595e759de33550e2ba9a5ee20b5f1b02eaa4a367"
+                "reference": "5a50e6a73744ebd496d85efce304481687558e6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-page-module/zipball/595e759de33550e2ba9a5ee20b5f1b02eaa4a367",
-                "reference": "595e759de33550e2ba9a5ee20b5f1b02eaa4a367",
+                "url": "https://api.github.com/repos/wakerscz/cms-page-module/zipball/5a50e6a73744ebd496d85efce304481687558e6e",
+                "reference": "5a50e6a73744ebd496d85efce304481687558e6e",
                 "shasum": ""
             },
             "type": "library",
@@ -2353,20 +2353,20 @@
             ],
             "description": "Page module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2018-12-07T04:00:54+00:00"
+            "time": "2019-02-07T05:46:41+00:00"
         },
         {
-            "name": "wakerscz/cms-structure-module",
+            "name": "wakers/cms-structure-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-structure-module.git",
-                "reference": "c5cb559a3d68467bab2732e54373c5bc18485ad2"
+                "reference": "c4fbe305c4f065511128bf3e09e7003d90efea38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-structure-module/zipball/c5cb559a3d68467bab2732e54373c5bc18485ad2",
-                "reference": "c5cb559a3d68467bab2732e54373c5bc18485ad2",
+                "url": "https://api.github.com/repos/wakerscz/cms-structure-module/zipball/c4fbe305c4f065511128bf3e09e7003d90efea38",
+                "reference": "c4fbe305c4f065511128bf3e09e7003d90efea38",
                 "shasum": ""
             },
             "type": "library",
@@ -2389,20 +2389,20 @@
             ],
             "description": "Structure module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-06T07:00:29+00:00"
+            "time": "2019-02-07T05:46:38+00:00"
         },
         {
-            "name": "wakerscz/cms-user-module",
+            "name": "wakers/cms-user-module",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-user-module.git",
-                "reference": "7df73a979174c7aac0f53c46136abdc71b619fc0"
+                "reference": "edc16534d41f7a2dc248493642ebdb1857de9fd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-user-module/zipball/7df73a979174c7aac0f53c46136abdc71b619fc0",
-                "reference": "7df73a979174c7aac0f53c46136abdc71b619fc0",
+                "url": "https://api.github.com/repos/wakerscz/cms-user-module/zipball/edc16534d41f7a2dc248493642ebdb1857de9fd2",
+                "reference": "edc16534d41f7a2dc248493642ebdb1857de9fd2",
                 "shasum": ""
             },
             "type": "library",
@@ -2425,10 +2425,10 @@
             ],
             "description": "User module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2018-12-06T22:04:28+00:00"
+            "time": "2019-02-07T05:46:40+00:00"
         },
         {
-            "name": "wakerscz/nette-propel2",
+            "name": "wakers/nette-propel2",
             "version": "v0.9.1",
             "source": {
                 "type": "git",
@@ -2665,13 +2665,13 @@
     "stability-flags": {
         "propel/propel": 20,
         "nette/forms": 20,
-        "wakerscz/cms-base-module": 20,
-        "wakerscz/cms-user-module": 20,
-        "wakerscz/cms-category-module": 20,
-        "wakerscz/cms-lang-module": 20,
-        "wakerscz/cms-onpage-module": 20,
-        "wakerscz/cms-page-module": 20,
-        "wakerscz/cms-structure-module": 20
+        "wakers/cms-base-module": 20,
+        "wakers/cms-user-module": 20,
+        "wakers/cms-category-module": 20,
+        "wakers/cms-lang-module": 20,
+        "wakers/cms-onpage-module": 20,
+        "wakers/cms-page-module": 20,
+        "wakers/cms-structure-module": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

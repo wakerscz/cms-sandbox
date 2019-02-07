@@ -19,16 +19,16 @@ module.exports = function ()
         js:
         [
             // Page - Add Form
-            './vendor/wakerscz/cms-page-module/src/assets/Frontend/add-form/js/addForm.js',
+            './vendor/wakers/cms-page-module/src/assets/Frontend/add-form/js/addForm.js',
 
             // OnPage - OG & SEO checker
-            './vendor/wakerscz/cms-onpage-module/src/assets/Frontend/onpage/js/ogSeoChecker.js',
+            './vendor/wakers/cms-onpage-module/src/assets/Frontend/onpage/js/ogSeoChecker.js',
 
             // Category - Category modal
-            './vendor/wakerscz/cms-category-module/src/assets/Frontend/modal/js/modal.js',
+            './vendor/wakers/cms-category-module/src/assets/Frontend/modal/js/modal.js',
 
             // Structure - Structure modal
-            './vendor/wakerscz/cms-structure-module/src/assets/Frontend/structure-modal/js/fileForm.js',
+            './vendor/wakers/cms-structure-module/src/assets/Frontend/structure-modal/js/fileForm.js',
 
             // Util / Node - TinyMCE
             './node_modules/tinymce/tinymce.js',
@@ -41,8 +41,8 @@ module.exports = function ()
             './node_modules/tinymce/plugins/paste/plugin.js',
             './node_modules/tinymce/plugins/image/plugin.js',
             './node_modules/tinymce/plugins/nonbreaking/plugin.js',
-            './vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce_cs.js',
-            './vendor/wakerscz/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce.js'
+            './vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce_cs.js',
+            './vendor/wakers/cms-structure-module/src/assets/Frontend/tinymce/js/tinymce.js'
         ],
 
         file:
