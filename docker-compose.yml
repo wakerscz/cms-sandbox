@@ -15,7 +15,7 @@ services:
     volumes:
       # PHP Configs
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-      - ./docker/php/xdebug.local.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:ro
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:ro
 
       # Application
       - ./app:/app/app:cached
