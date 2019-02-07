@@ -134,8 +134,7 @@ services:
       - ./www:/app/www:cached
 
       # webpack
-      - ./webpack.config.js:/app/webpack.config.js:cached
-      - ./webpack:/app/webpack:cached
+      - ./gulpfile.js:/app/gulpfile.js:cached
 
       # static assets
       - ./assets/static:/app/assets/static:delegated
@@ -159,6 +158,7 @@ services:
       - ./assets/dynamic:/home/wakerscms/assets/dynamic
       #- ./temp/cache:/home/wakerscms/temp/cache
       - ./log:/home/wakerscms/log
+      #- ./www/temp:/home/wakerscms/www/temp
     ports:
       - "2222:22"
     command: wakerscms:${SFTP_PASSWORD}:1001

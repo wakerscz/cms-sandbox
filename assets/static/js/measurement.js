@@ -1,9 +1,6 @@
 /**
- * Frontend web measurement included only in production environment.
- * Author: Jiří Zapletal
- * Company: Wakers (http://www.wakers.cz)
- * Contact: zapletal@wakers.cz
- * Copyright 2017
+ * Copyright (c) 2019 Wakers.cz
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
  */
 
 
@@ -19,4 +16,4 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 
 gtag('js', new Date());
-gtag('config', 'UA-53420713-2');
+gtag('config', 'XX-XXXXXXXX-X');

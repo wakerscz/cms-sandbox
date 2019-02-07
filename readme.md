@@ -75,8 +75,8 @@ Symbol [ 🐳 ] - povinné pouze v případě použití Dockeru.
 Po zprovoznění aplikace na serveru je potřeba:
 
 1. Přepsat, případně přidat názvy domén (dev.wakers.cz) v souborech:
-    - `./init-letsencrypt.sh`.
+    - `./letsencrypt.sh`.
     - `./docker/nginx/servers/production.conf`.
     
 2. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`.
-3. Spustit script `./init-letsencrypt.sh`.
+3. Spustit script `./letsencrypt.sh`.

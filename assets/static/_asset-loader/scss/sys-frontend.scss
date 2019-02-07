@@ -1,0 +1,25 @@
+/**
+ * Copyright (c) 2019 Wakers.cz
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ */
+
+
+// Styly z IN-PAGE MANAGERU které musí být dostupné ještě před přihlášením admina
+
+
+// Base - Variables
+@import './../../../../vendor/wakerscz/cms-base-module/src/assets/Common/_variables/scss/_variables';
+
+
+// Layout webu (custom layout)
+@import "./../../scss/my-layout"; // <--- načti vlastní layout webu
+
+// Base - Loader
+@import "./../../../../vendor/wakerscz/cms-base-module/src/assets/Frontend";
+
+// Node - Animate CSS
+@import '~animate-sass/helpers/settings';
+@import '~animate-sass/helpers/mixins';
+@import '~animate-sass/helpers/base';
+@import '~animate-sass/animations/fade-enter/fadeIn';
+@import '~animate-sass/animations/fade-exit/fadeOut';
