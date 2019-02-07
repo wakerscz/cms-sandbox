@@ -18,7 +18,7 @@ http:
 tracy:
     editor: 'phpstorm://open?file=%file&line=%line'
     editorMapping:
-        /in-docker/app: /Users/jzapletal/www/cms5-sandbox/app
+        /app: /Users/jzapletal/www/cms5-sandbox
 
 
 session:

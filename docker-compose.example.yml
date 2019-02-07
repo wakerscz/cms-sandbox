@@ -2,7 +2,6 @@ version: '3'
 
 services:
 
-
   app:
     restart: "no"
 
@@ -11,9 +10,25 @@ services:
     restart: "no"
 
 
+  certbot:
+    restart: "no"
+
+
   mariadb:
     restart: "no"
 
 
   adminer:
+    restart: "no"
+
+
+  composer:
+    restart: "no"
+
+
+  nodejs:
+    restart: "no"
+
+
+  sftp:
     restart: "no"
