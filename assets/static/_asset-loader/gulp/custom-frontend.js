@@ -29,7 +29,6 @@ module.exports = function ()
 
         file:
         [
-            //{ from: './node_modules/font-awesome/fonts/*', to: '/font' }
             { from: './assets/static/image/favicon.ico', to: '/image'}
         ]
 

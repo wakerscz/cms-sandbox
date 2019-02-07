@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Packages versions
+COMPOSER_VERSION="1.8.3"
+NPM_VERSION="6.4.0"
+NODE_VERSION="v8.11.2"
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Permissions
 wakers_resolve_permissions()
 {
     mkdir -p ./assets/dynamic
@@ -15,95 +27,9 @@ wakers_resolve_permissions()
     chmod -R ugo+w ./log
 }
 
-# Resolve before start
-wakers_resolve_permissions
-
-
-wakers_npm()
-{
-    mkdir -p ./node_modules/.temp-fix
-
-    if [ -e ./package.json ]
-    then
-        cp -rf ./package.json ./node_modules/.temp-fix/package.json
-    fi
-
-    if [ -e ./package-lock.json ]
-    then
-        cp -rf ./package-lock.json ./node_modules/.temp-fix/package-lock.json
-    fi
-
-    docker exec -it nodejs ${@}
-    find . -name 'npm-*' -type d -exec rm -rf {} +
-
-    if [ -e ./node_modules/.temp-fix/package.json ]
-    then
-        cat /dev/null > ./package.json
-        IFS=$'\n'
-
-        for j in $(cat ./node_modules/.temp-fix/package.json)
-        do
-            echo "$j" >> ./package.json
-        done
-    fi
-
-    if [ -e ./node_modules/.temp-fix/package-lock.json ]
-    then
-        cat /dev/null > ./package-lock.json
-        IFS=$'\n'
-
-        for j in $(cat ./node_modules/.temp-fix/package-lock.json)
-        do
-            echo "$j" >> ./package-lock.json
-        done
-    fi
-
-}
-
-wakers_composer()
-{
-    mkdir -p ./vendor/.temp-fix
-
-    if [ -e ./composer.json ]
-    then
-        cp -rf ./composer.json ./vendor/.temp-fix/app/composer.json
-    fi
-
-    if [ -e ./composer.lock ]
-    then
-        cp -rf ./composer.lock ./vendor/.temp-fix/app/composer.lock
-    fi
-
-    docker exec -it composer ${@}
-
-    if [ -e ./vendor/.temp-fix/app/composer.json ]
-    then
-        cat /dev/null > ./composer.json
-        IFS=$'\n'
-
-        for j in $(cat ./vendor/.temp-fix/app/composer.json)
-        do
-            echo "$j" >> ./composer.json
-        done
-    fi
-
-    if [ -e ./vendor/.temp-fix/app/composer.lock ]
-    then
-        cat /dev/null > ./composer.lock
-        IFS=$'\n'
-
-        for j in $(cat ./vendor/.temp-fix/app/composer.lock)
-        do
-            echo "$j" >> ./composer.lock
-        done
-    fi
-}
-
-
 wakers_console()
 {
     rm -rf ./temp/cache
-
     docker exec -it app php ./www/index.php ${@}
 }
 
@@ -126,40 +52,52 @@ wakers_propel()
 wakers_help()
 {
     echo -e "\n|------------------------------------------------|"
-    echo "| DEV COMMANDS :                                 |"
-    echo "|------------------------------------------------|"
-    echo "|                                                |"
-    echo "|   npm                                          |"
-    echo "|   propel                                       |"
-    echo "|   console                                      |"
-    echo "|   composer                                     |"
-    echo "|   gulp-dev                                     |"
-    echo "|   gulp-prod                                    |"
-    echo "|   gulp-watch                                   |"
-    echo "|                                                |"
+    echo -e "| ${YELLOW}DEV COMMANDS:${NC}                                  |"
+    echo -e "|------------------------------------------------|"
+    echo -e "|                                                |"
+    echo -e "|   ${GREEN}./sc npm${NC}                                     |"
+    echo -e "|   ${GREEN}./sc composer${NC}                                |"
+    echo -e "|   ${GREEN}./sc propel${NC}                                  |"
+    echo -e "|   ${GREEN}./sc console${NC}                                 |"
+    echo -e "|                                                |"
     echo -e "|------------------------------------------------|\n"
 }
 
+# Resolve permissions on start
+wakers_resolve_permissions
 
 if test "$1" = "composer"
 then
-    wakers_composer ${@}
+    ACTUAL_COMPOSER_VER=$(composer --version)
+
+    if [[ $ACTUAL_COMPOSER_VER != *"$COMPOSER_VERSION"* ]]
+    then
+        echo -e "${RED}"
+        echo -e "UPGRADE or DOWNGRADE your COMPOSER version if different."
+        echo -e "You have: $ACTUAL_COMPOSER_VER"
+        echo -e "${GREEN}And you need this composer version: $COMPOSER_VERSION"
+        echo -e "${NC}"
+    else
+        composer ${@:2}
+    fi
 
 elif test "$1" = "npm"
 then
-    wakers_npm ${@}
+    ACTUAL_NPM_VER=$(npm --version)
+    ACTUAL_NODE_VER=$(node --version)
 
-elif test "$1" = "gulp-watch"
-then
-    wakers_npm "npm" "run" "gulp-watch"
-
-elif test "$1" = "gulp-dev"
-then
-    wakers_npm "npm" "run" "gulp-dev"
-
-elif test "$1" = "gulp-prod"
-then
-    wakers_npm "npm" "run" "gulp-prod"
+    if [[ $ACTUAL_NPM_VER != *"$NPM_VERSION"* ]] || [[ $ACTUAL_NODE_VER != *"$NODE_VERSION"* ]]
+    then
+        echo -e "${RED}"
+        echo -e "UPGRADE or DOWNGRADE your NODEJS or NPM versions if different.\n"
+        echo -e "Your NPM version: $ACTUAL_NPM_VER"
+        echo -e "${GREEN}You need NPM version: $NPM_VERSION\n"
+        echo -e "${RED}Your NODEJS version: $ACTUAL_NODE_VER"
+        echo -e "${GREEN}You need NODEJS version: $NODE_VERSION"
+        echo -e "${NC}"
+    else
+        npm ${@:2}
+    fi
 
 elif test "$1" = "console"
 then
@@ -169,17 +107,12 @@ elif test "$1" = "propel"
 then
     wakers_propel ${@:2}
 
-elif test "$1" = "server-deploy-migrate"
-then
-    wakers_propel "model:build"
-    wakers_propel "migration:migrate"
-
 elif test "$1" = ""
 then
     wakers_help
 
 else
-    echo -e "\nERROR: Command '$1' does not specified in shortcuts!"
+    echo -e "\n${RED}ERROR: Command '${GREEN}./sc $1'${RED} does not specified in shortcuts!${NC}"
     wakers_help
 fi
 

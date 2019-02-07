@@ -22,13 +22,5 @@ services:
     restart: "no"
 
 
-  composer:
-    restart: "no"
-
-
-  nodejs:
-    restart: "no"
-
-
   sftp:
     restart: "no"
