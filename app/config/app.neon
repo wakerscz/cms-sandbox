@@ -14,12 +14,10 @@ http:
     headers:
         X-Powered-By: 'Wakers CMS 5'
 
-
 tracy:
     editor: 'phpstorm://open?file=%file&line=%line'
     editorMapping:
-        /app: /Users/jzapletal/www/cms5-sandbox
-
+        /in-docker: /Users/jzapletal/www/cms5-sandbox
 
 session:
     #autoStart: true

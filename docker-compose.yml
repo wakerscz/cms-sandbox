@@ -5,20 +5,20 @@ services:
   app:
     build: .
     restart: "always"
-    working_dir: /app
+    working_dir: /in-docker
     volumes:
       # PHP Configs
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
       - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini:ro
 
       # Application
-      - ./app:/app/app:cached
-      - ./i18n:/app/i18n:cached
-      - ./assets/dynamic:/app/assets/dynamic:cached
-      - ./www:/app/www:cached
-      - ./log:/app/log:cached
-      - ./temp:/app/temp:cached
-      - ./vendor:/app/vendor:cached
+      - ./app:/in-docker/app:cached
+      - ./i18n:/in-docker/i18n:cached
+      - ./assets/dynamic:/in-docker/assets/dynamic:cached
+      - ./www:/in-docker/www:cached
+      - ./log:/in-docker/log:cached
+      - ./temp:/in-docker/temp:cached
+      - ./vendor:/in-docker/vendor:cached
     expose:
       - 9000
     networks:
@@ -39,12 +39,12 @@ services:
       - ./docker/certbot.local/www:/var/www/certbot:cached
 
       # Application
-      - ./app:/app/app:cached
-      - ./assets/dynamic:/app/assets/dynamic:cached
-      - ./www:/app/www:cached
-      - ./log:/app/log:cached
-      - ./temp:/app/temp:cached
-      - ./vendor:/app/vendor:cached
+      - ./app:/in-docker/app:cached
+      - ./assets/dynamic:/in-docker/assets/dynamic:cached
+      - ./www:/in-docker/www:cached
+      - ./log:/in-docker/log:cached
+      - ./temp:/in-docker/temp:cached
+      - ./vendor:/in-docker/vendor:cached
     networks:
       - wakers-network
     ports:
@@ -72,7 +72,7 @@ services:
     image: mariadb:10.4.2
     restart: "always"
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     command: mysqld --innodb-flush-method=littlesync --innodb-use-native-aio=OFF --log_bin=ON
     volumes:
       # Mariadb folder
@@ -96,14 +96,14 @@ services:
     restart: "always"
     image: atmoz/sftp:alpine-3.7
     volumes:
-      - ./docker/mariadb:/home/wakerscms/docker/mariadb:ro
-      - ./assets/dynamic:/home/wakerscms/assets/dynamic
-      - ./temp/cache:/home/wakerscms/temp/cache
-      - ./log:/home/wakerscms/log
-      - ./www/temp:/home/wakerscms/www/temp
+      - ./docker/mariadb:/home/${SFTP_USER}/docker/mariadb:ro
+      - ./assets/dynamic:/home/${SFTP_USER}/assets/dynamic
+      - ./log:/home/${SFTP_USER}/log
+      - ./temp/cache:/home/${SFTP_USER}/temp/cache
+      - ./www/temp:/home/${SFTP_USER}/www/temp
     ports:
       - "2222:22"
-    command: wakerscms:${SFTP_PASSWORD}:1001
+    command: ${SFTP_USER}:${SFTP_PASSWORD}:1001
     networks:
       - wakers-network
 

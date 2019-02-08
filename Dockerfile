@@ -14,4 +14,4 @@ RUN docker-php-ext-install pdo_mysql
 #RUN docker-php-ext-enable xdebug
 
 # Move all folders to container, make temp dir (if not exists)
-COPY . /app
+COPY . /in-docker

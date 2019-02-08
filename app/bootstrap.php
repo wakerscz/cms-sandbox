@@ -2,8 +2,15 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$dotenv = new \Symfony\Component\Dotenv\Dotenv();
+$dotenv->load(__DIR__ . '/../.env');
+
 $configurator = new Nette\Configurator;
-$configurator->setDebugMode(['172.19.0.1']); // enable for your remote IP
+
+if(getenv('NETTE_DEBUG') === "1") {
+    $configurator->setDebugMode(TRUE);
+}
+
 $configurator->enableDebugger(__DIR__ . '/../log');
 
 $configurator->setTimeZone('Europe/Prague');

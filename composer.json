@@ -23,7 +23,8 @@
         "wakers/cms-lang-module": "dev-master",
         "wakers/cms-onpage-module": "dev-master",
         "wakers/cms-page-module": "dev-master",
-        "wakers/cms-structure-module": "dev-master"
+        "wakers/cms-structure-module": "dev-master",
+        "symfony/dotenv": "^4.2"
     },
     "require-dev": {
         "kdyby/console": "^2.7",
