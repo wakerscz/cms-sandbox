@@ -35,10 +35,7 @@ CMS založený na Nette 2.4 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wa
 ## Užitečné příkazy
 - Přehled hl. příkazů: `./sc`.
 - Přepnutí se do Docker containeru: `docker exec -it <container_name> bash`.
-- Spuštění PHP příkazu v containeru: `docker-compose exec <service_name> php <command>`.
-
-## Možné problémy
-- Nezobrazuje se tracy - dumpněte si `var_dump($_SERVER['REMOTE_ADDR'])` a přidejte jí do `./app/bootstrap.php` - `$configurator->setDebugMode(['X.X.X.X']);`.
+- Spuštění příkazu v containeru: `docker-compose exec <service_name> <commands>`.
 
 ## Deploy
 Po zprovoznění aplikace na serveru je potřeba:
