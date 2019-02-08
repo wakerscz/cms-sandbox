@@ -1,5 +1,5 @@
 application:
-    catchExceptions: false #change to true for production-mode
+    catchExceptions: ::getenv('CATCH_EXCEPTIONS')
     errorPresenter: Base:Error
     mapping:
         App: Wakers\App\Presenter\*Presenter
@@ -34,7 +34,7 @@ services:
 
 parameters:
 
-    baseDomain: http://localhost/ # Kvůli přesměrování starých URL
+    baseDomain: ::getenv('CATCH_EXCEPTIONS') # Kvůli přesměrování starých URL
 
     adminLang: cs # defaultní jazyk administrace
 
