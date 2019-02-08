@@ -1,6 +1,6 @@
 # Wakers CMS 5
 
-CMS založený na Nette 2.4 a PHP 7.2 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
+CMS založený na Nette 2.4 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
 
 ## V čem je systém vyjímečný
 
@@ -11,7 +11,6 @@ CMS založený na Nette 2.4 a PHP 7.2 | [http://www.wakers.cz/cms](http://www.wa
 ### Závislosti pro spuštění
 - Docker: 18.23.2
 - Docker compose: 1.23.2
-- Composer: 1.8.3
 - NodeJS: v8.12.2
 - NPM: 6.4.1
 
@@ -34,18 +33,20 @@ CMS založený na Nette 2.4 a PHP 7.2 | [http://www.wakers.cz/cms](http://www.wa
 1. Vytvoření admina `./sc console wakers:admin-create <email> <password>`.
 
 ## Užitečné příkazy
-- Přepnutí se do Docker containeru: `docker exec -it app bash`.
-- Spuštění PHP příkazu v containeru: `docker exec -it app php <command>`.
+- Přehled hl. příkazů: `./sc`.
+- Přepnutí se do Docker containeru: `docker exec -it <container_name> bash`.
+- Spuštění PHP příkazu v containeru: `docker-compose exec <service_name> php <command>`.
 
 ## Možné problémy
 - Nezobrazuje se tracy - dumpněte si `var_dump($_SERVER['REMOTE_ADDR'])` a přidejte jí do `./app/bootstrap.php` - `$configurator->setDebugMode(['X.X.X.X']);`.
 
-## Deploy a HTTPS
+## Deploy
 Po zprovoznění aplikace na serveru je potřeba:
 
 1. Přepsat, případně přidat názvy domén (dev.wakers.cz) v souborech:
-    - `./letsencrypt.sh`.
+    - `./sc-letsencrypt.sh`.
     - `./docker/nginx/servers/production.conf`.
     
 2. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`.
-3. Spustit script `./letsencrypt.sh`.
+3. Spustit script `./sc-letsencrypt.sh`.
+4. Přidat cron pro dump DB `crontab -e`, `crontab -l`, `0 4 * * * /in-docker/sc-dumpdb.sh`.

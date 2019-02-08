@@ -30,7 +30,7 @@ wakers_resolve_permissions()
 wakers_console()
 {
     rm -rf ./temp/cache
-    docker exec -it app php ./www/index.php ${@}
+    docker-compose exec app php ./www/index.php ${@}
 }
 
 
@@ -41,7 +41,7 @@ wakers_propel()
         rm -rf ./temp/propel
     fi
 
-    docker exec -it app php ./vendor/bin/wpropel ${@}
+    docker-compose exec app php ./vendor/bin/wpropel ${@}
 
     if test "$1" = "model:build"
     then
@@ -68,18 +68,7 @@ wakers_resolve_permissions
 
 if test "$1" = "composer"
 then
-    ACTUAL_COMPOSER_VER=$(composer --version)
-
-    if [[ $ACTUAL_COMPOSER_VER != *"$COMPOSER_VERSION"* ]]
-    then
-        echo -e "${RED}"
-        echo -e "UPGRADE or DOWNGRADE your COMPOSER version if different."
-        echo -e "You have: $ACTUAL_COMPOSER_VER"
-        echo -e "${GREEN}And you need this composer version: $COMPOSER_VERSION"
-        echo -e "${NC}"
-    else
-        composer ${@:2}
-    fi
+    docker run --rm --interactive --tty --volume $PWD:/app --volume $COMPOSER_HOME:/tmp composer:$COMPOSER_VERSION ${@}
 
 elif test "$1" = "npm"
 then

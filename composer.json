@@ -12,7 +12,7 @@
     "type": "project",
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.3.1",
         "propel/propel": "dev-master#8dc9f567e77d7e2ae7f6d9878dbb435f7fd7feed",
         "nette/nette": "^2.4.0",
         "nette/forms": "v2.4.x-dev",
