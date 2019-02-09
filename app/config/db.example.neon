@@ -11,8 +11,8 @@ wakers-propel:
                     adapter: mysql
                     classname: Propel\Runtime\Connection\ProfilerConnectionWrapper
                     dsn: 'mysql:host=mariadb;dbname=wakers_cms_db'
-                    user: root # zatím nelze použít ::getenv('MYSQL_USER')
-                    password: root # zatím nelze použít ::getenv('MYSQL_PASSWORD')
+                    user: ::getenv('MYSQL_USER')
+                    password: ::getenv('MYSQL_PASSWORD')
                     attributes:
                     settings:
                         charset: utf8
