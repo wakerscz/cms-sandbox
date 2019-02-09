@@ -1,14 +1,15 @@
 {**
  * Copyright (c) 2018 Wakers.cz
- *
  * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
  *
+ * Jak používat překlady v mailech:
+ * {$translate->translate('Hello,')}
  *}
 
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{$translate->translate('User account created - %sender-name%', ['sender-name' => $sender['name']])}</title>
+    <title>Vytvoření uživatelského účtu - {$sender['name']}</title>
     <style>
         .red {
             color: #ff0000;
@@ -17,18 +18,20 @@
 </head>
 <body>
 
-<p>{$translate->translate('Hello,')}</p>
+{**}
 
-<p>{$translate->translate('We have just created you an account for site:')} <a href="{$url}">{$url}</a>.</p>
+<p>Dobrý den,</p>
+
+<p>právě jsme Vám vytvořili nový uživatelský účet pro web: <a href="{$url}">{$url}</a>.</p>
 
 <p>
-    {$translate->translate('E-mail:')} <strong>{$user->getEmail()}</strong><br>
-    {$translate->translate('Password:')} <strong><span class="red">{$password}</span></strong>
+    E-mail: <strong>{$user->getEmail()}</strong><br>
+    Heslo: <strong><span class="red">{$password}</span></strong>
 </p>
 
-<p>{$translate->translate('Go to the user profile and set your own password.')}</p>
+<p>Přejděte do Vašeho uživatelského profilu a nastavte si vlastní heslo.</p>
 
-<p>{$translate->translate('Thank you and wish a great day.')}</p>
+<p>Děkujeme a přejeme hezký den.</p>
 
 </body>
 </html>
