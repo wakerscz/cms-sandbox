@@ -2,9 +2,9 @@
 
 CMS založený na Nette 2.4 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
 
-## V čem je systém vyjímečný
+## O Projektu
+**TODO:** Video - Proč jsme to vyvinuli, jak to funguje a co to umí.
 
-**TODO:** Youtube Video
 
 ## Instalace systému
 
