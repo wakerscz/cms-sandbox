@@ -49,11 +49,11 @@ module.exports = function ()
             // Base - Progress button
             './vendor/wakers/cms-base-module/src/assets/Common/progress-button/js/progressButton.js',
 
-            // User - Login
-            './vendor/wakers/cms-user-module/src/assets/Frontend/login-modal/js/loginModal.js',
-
             // Util - Amimate CSS
             './vendor/wakers/cms-base-module/src/assets/Common/animate/js/animate.js',
+
+            // User - Login
+            './vendor/wakers/cms-user-module/src/assets/Frontend/login-modal/js/loginModal.js',
 
             // Base - Wakers Run
             './vendor/wakers/cms-base-module/src/assets/Common/run/js/run.js',
