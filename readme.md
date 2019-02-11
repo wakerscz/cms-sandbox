@@ -10,13 +10,14 @@ CMS založený na Nette 2.4 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wa
 ### 0. Závislosti pro spuštění
 - Docker: 18.23.2
 - Docker compose: 1.23.2
+- GIT: 2.20.1
 - NodeJS: v8.12.2
 - NPM: 6.7.0
 
 ### 1. Konfigurace
 1. Instalace a spuštění Dockeru [https://www.docker.com/get-started](https://www.docker.com/get-started).
 1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`.
-1. Vytvoření projektu `composer create-project wakers/cms-sandbox --stability dev`.
+1. Vytvoření projektu `git clone --depth=1  https://github.com/wakerscz/cms-sandbox.git && rm -rf ./cms-sandbox/.git`.
 1. Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`).
 1. Vytvoření `./docker/nginx/nginx.conf` (podle `./docker/nginx/nginx.example.conf`).
 1. Vytvoření `.env` (podle souboru `.env.example`).
