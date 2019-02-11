@@ -2,7 +2,7 @@
 
 # Packages versions
 COMPOSER_VERSION="1.8.3"
-NPM_VERSION="6.4.0"
+NPM_VERSION="6.7.0"
 NODE_VERSION="v8.11.2"
 
 # Colors
