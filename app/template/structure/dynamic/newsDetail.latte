@@ -50,20 +50,16 @@
 
         <div>linkExternal: {$row->getValContent('linkExternal')}</div>
 
-        <div>selectBox: {$row->getValContent('selectBox')}</div>
-
-        <div>
-            <h4>Test</h4>
-            {$row->getValContent('test')|noescape}
-        </div>
-
         {var $url = $row->getValUrl('linkInternal')}
 
         <div n:if="$url">
+            linkInternal:
             <a href="{plink :App:Run:setUrl $url->getUrl()}" target="_blank">
                 {$url->getPage()->getName()}
             </a>
         </div>
+
+        <div>selectBox: {$row->getValContent('selectBox')}</div>
 
         <h4>Images</h4>
         {foreach $row->getValFiles('images') as $file}
