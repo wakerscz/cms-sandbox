@@ -11,7 +11,7 @@ CMS založený na Nette 2.4 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wa
 - [Docker desktop](https://www.docker.com/products/docker-desktop): 18.09.1
 - [GIT](https://git-scm.com/downloads): 2.20.1
 - [NodeJS](https://nodejs.org/en/download/): v8.12.2
-- NPM: 6.7.0 `npm update -g npm@6.7.0`
+- NPM: 6.7.0 `npm i -g npm@6.7.0`
 
 ### 1. Konfigurace
 1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`.
