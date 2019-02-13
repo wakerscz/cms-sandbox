@@ -3,7 +3,21 @@
 CMS založený na Nette 2.4 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
 
 ## O Projektu
-**TODO:** Video - Proč jsme to vyvinuli, jak to funguje a co to umí.
+Systém byl vyvinut za účelem zrychlení implementace a následné udržitelnosti projektů. Vše bylo
+rozděleno do vendor modulů - ty jsou verzovány samostatně. Výsledný webový projekt tedy neobsahuje žádné
+zbytečné kódy a je přehlednější. Dev-stack nového projektu lze připravit během pár minut.
+
+7 základních modulů  **nahrazuje jiné open-source CMS**. Výhoda Wakers CMS spočívá v možnosti využití 
+Nette. Systém lze rozšiřovat o další (vlastní) moduly či komponenty. Lze kompletně upravovat, nahrazovat
+a konfigurovat jednotlivé části CMS. 
+
+Druhou obrovskou výhodou je UI pro správu webu - administrátoři stránku editují téměř tak, jak ji vidí. 
+Nemají k dispozici zbytečné funkce a jsou omezeni, aby zcela nenarušili vizuální podobu a celý smysl webu.
+
+Jako freelanceři se vývojem tohoto CMS snažíme posouvat vpřed. 
+Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových kódů a vytvoření (na sobě) nezávislých modulů.
+
+**TODO:** Video - Jak implementovat one-page web (na míru) za 15 minut.
 
 ## Instalace systému
 
