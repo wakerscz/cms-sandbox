@@ -3,34 +3,36 @@ parameters:
 
         exceptions:
             sender:
-                name: 'Wakers.cz CMS 5.0'
-                email: 'cms@wakers.cz'
-                to: 'zapletal@wakers.cz'
-
+                name: 'Wakers.cz CMS 5'
+                email: ::getenv('SMTP_USERNAME')
+                to: ::getenv('NETTE_DEBUG_MAIL')
             config:
-                host: 'smtp-relay.gmail.com'
-                username: 'zapletal@wakers.cz'
-                password: ''
-                secure: 'ssl'
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: 587
+                secure: 'tls'
 
 
         resetPassword:
             sender:
-                name: 'Wakers CMS 5.0'
-                email: 'info@wakers.cz'
+                name: 'Wakers CMS 5'
+                email: 'zapletal@wakers.cz'
             config:
-                host: 'smtp-relay.gmail.com'
-                username: 'zapletal@wakers.cz'
-                password: ''
-                secure: 'ssl'
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: 587
+                secure: 'tls'
 
 
         createUser:
             sender:
-                name: 'Wakers CMS 5.0'
-                email: 'info@wakers.cz'
+                name: 'Wakers CMS 5'
+                email: 'zapletal@wakers.cz'
             config:
-                host: 'smtp-relay.gmail.com'
-                username: 'zapletal@wakers.cz'
-                password: ''
-                secure: 'ssl'
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: 587
+                secure: 'tls'

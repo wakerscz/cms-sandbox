@@ -1,5 +1,5 @@
 application:
-    catchExceptions: ::getenv('CATCH_EXCEPTIONS')
+    catchExceptions: ::getenv('NETTE_CATCH_EXCEPTIONS')
     errorPresenter: Base:Error
     mapping:
         App: Wakers\App\Presenter\*Presenter
@@ -15,6 +15,7 @@ http:
         X-Powered-By: 'Wakers CMS 5'
 
 tracy:
+    email: ::getenv('NETTE_DEBUG_MAIL')
     editor: 'phpstorm://open?file=%file&line=%line'
     editorMapping:
         /in-docker: /Users/jzapletal/www/cms5-sandbox
@@ -34,7 +35,7 @@ services:
 
 parameters:
 
-    baseDomain: ::getenv('CATCH_EXCEPTIONS') # Kvůli přesměrování starých URL
+    baseDomain: ::getenv('BASE_DOMAIN') # Kvůli přesměrování starých URL
 
     adminLang: cs # defaultní jazyk administrace
 

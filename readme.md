@@ -70,4 +70,4 @@ Po zprovoznění aplikace na serveru je potřeba:
     
 2. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`.
 3. Spustit script `./sc-letsencrypt.sh`.
-4. Přidat cron pro dump DB `crontab -e`, `crontab -l`, `0 4 * * * /in-docker/sc-dumpdb.sh`.
+4. Přidat cron pro dump DB `crontab -e`, `crontab -l`, `0 4 * * * /<path_to>/sc-dumpdb.sh`.
