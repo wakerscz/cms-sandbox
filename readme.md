@@ -19,6 +19,15 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 
 **TODO:** Video - Jak implementovat one-page web (na míru) za 15 minut.
 
+## Seznam výchozích modulů
+1. [Base Module](http://www.github.com/wakerscz/cms-base-module).
+1. [User Module](http://www.github.com/wakerscz/cms-user-module).
+1. [Lang Module](http://www.github.com/wakerscz/cms-lang-module).
+1. [Page Module](http://www.github.com/wakerscz/cms-page-module).
+1. [On-Page Module](http://www.github.com/wakerscz/cms-onpage-module).
+1. [Category Module](http://www.github.com/wakerscz/cms-category-module).
+1. [Structure Module](http://www.github.com/wakerscz/cms-structure-module).
+
 ## Instalace systému
 
 ### 0. Závislosti pro spuštění
