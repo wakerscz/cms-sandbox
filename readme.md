@@ -37,7 +37,6 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 - NPM: 6.7.0 `npm i -g npm@6.7.0`
 
 ### 1. Konfigurace
-1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`.
 1. Vytvoření projektu `git clone --depth=1  https://github.com/wakerscz/cms-sandbox.git && rm -rf ./cms-sandbox/.git`.
 1. Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`).
 1. Vytvoření `./docker/nginx/nginx.conf` (podle `./docker/nginx/nginx.example.conf`).
@@ -45,6 +44,7 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 1. Vytvoření a nastavení configů `./app/config/db.local.neon` a `./app/config/smtp.local.neon` (podle `./app/config/*.example.neon` souborů).
 
 ### 2. Spuštění
+1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`.
 1. Sestavení a spuštění Docker containeru `docker-compose up --build --d`.
 1. Vytvoření databáze s kódováním `utf8_general_ci` na [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: root`).
 1. Instalace závislostí `./sc composer i` a `./sc npm i`.
