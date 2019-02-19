@@ -18,6 +18,7 @@ wakers_resolve_permissions()
     mkdir -p ./www/temp/static
     mkdir -p ./www/temp/dynamic
     mkdir -p ./temp
+    mkdir -p ./temp/cache
     mkdir -p ./log
 
     chmod -R ugo+w ./assets/dynamic
@@ -29,7 +30,7 @@ wakers_resolve_permissions()
 
 wakers_console()
 {
-    rm -rf ./temp/cache
+    rm -rf ./temp/cache/*
     docker-compose exec app php ./www/index.php ${@}
 }
 
