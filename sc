@@ -23,7 +23,7 @@ wakers_resolve_permissions()
 
     chmod -R ugo+w ./assets/dynamic
     chmod -R ugo+rw ./www/temp/dynamic
-    chmod -R ugo+r ./www/temp/static
+    chmod -R ugo+rw ./www/temp/static
     chmod -R ugo+w ./temp
     chmod -R ugo+w ./log
 }
