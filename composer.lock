@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7394a86d982482ba1a93c971d420748",
+    "content-hash": "2ebed104f7ca9b7ea605bfef50739cdb",
     "packages": [
         {
             "name": "latte/latte",
@@ -2384,16 +2384,16 @@
         },
         {
             "name": "wakers/cms-user-module",
-            "version": "1.0.0-alpha",
+            "version": "1.0.1-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-user-module.git",
-                "reference": "eb758bfd62f09e8148a7a2ca86dd96650522bf96"
+                "reference": "d24b54b30ebc5c9f3b9fa378c3be5c0589f6f6d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-user-module/zipball/eb758bfd62f09e8148a7a2ca86dd96650522bf96",
-                "reference": "eb758bfd62f09e8148a7a2ca86dd96650522bf96",
+                "url": "https://api.github.com/repos/wakerscz/cms-user-module/zipball/d24b54b30ebc5c9f3b9fa378c3be5c0589f6f6d4",
+                "reference": "d24b54b30ebc5c9f3b9fa378c3be5c0589f6f6d4",
                 "shasum": ""
             },
             "type": "library",
@@ -2416,7 +2416,7 @@
             ],
             "description": "User module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-14T15:55:19+00:00"
+            "time": "2019-02-28T14:32:51+00:00"
         },
         {
             "name": "wakers/nette-propel2",
