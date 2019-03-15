@@ -61,6 +61,7 @@ services:
       # Certbot certificates
       - ./docker/certbot.local/conf:/etc/letsencrypt:cached
       - ./docker/certbot.local/www:/var/www/certbot:cached
+      - ./docker/certbot.local/log:/var/log/letsencrypt
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     networks:
       - wakers-network
