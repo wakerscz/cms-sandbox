@@ -64,7 +64,7 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 ## Deploy
 Po zprovoznění aplikace na serveru je potřeba:
 
-1. Přepsat, případně přidat názvy domén (wakers.cz) v souborech:
+1. Přepsat, případně přidat názvy domén (dev.wakers.cz) v souborech:
     - `./sc-letsencrypt.sh`.
     - `./docker/nginx/servers/production.conf`.
     
