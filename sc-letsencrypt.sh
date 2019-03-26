@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domains=(dev.wakers.cz)
+domains=(www.wakers.cz wakers.cz)
 email="info@wakers.cz"
 
 data_path="./docker/certbot.local"
