@@ -23,7 +23,7 @@
         "wakers/cms-lang-module": "~1.0.0-alpha",
         "wakers/cms-onpage-module": "~1.0.0-alpha",
         "wakers/cms-page-module": "~1.0.1-alpha",
-        "wakers/cms-structure-module": "~1.0.0-alpha",
+        "wakers/cms-structure-module": "1.0.1-alpha",
         "symfony/dotenv": "^4.2"
     },
     "require-dev": {

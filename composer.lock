@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ebed104f7ca9b7ea605bfef50739cdb",
+    "content-hash": "034831a2b4f135649a6494a10dc7d49b",
     "packages": [
         {
             "name": "latte/latte",
@@ -2348,16 +2348,16 @@
         },
         {
             "name": "wakers/cms-structure-module",
-            "version": "1.0.0-alpha",
+            "version": "1.0.1-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wakerscz/cms-structure-module.git",
-                "reference": "e9279e5a3a96534a3686459d740b134871bf6924"
+                "reference": "168798ddcd872836bf12c73f47e8b8bc1119975f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wakerscz/cms-structure-module/zipball/e9279e5a3a96534a3686459d740b134871bf6924",
-                "reference": "e9279e5a3a96534a3686459d740b134871bf6924",
+                "url": "https://api.github.com/repos/wakerscz/cms-structure-module/zipball/168798ddcd872836bf12c73f47e8b8bc1119975f",
+                "reference": "168798ddcd872836bf12c73f47e8b8bc1119975f",
                 "shasum": ""
             },
             "type": "library",
@@ -2380,7 +2380,7 @@
             ],
             "description": "Structure module of Wakers CMS 5",
             "homepage": "http://www.wakers.cz/cms",
-            "time": "2019-02-14T20:56:20+00:00"
+            "time": "2019-03-27T08:10:34+00:00"
         },
         {
             "name": "wakers/cms-user-module",
