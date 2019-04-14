@@ -15,7 +15,7 @@ http:
         X-Powered-By: 'Wakers CMS 5'
 
 tracy:
-    email: ::getenv('NETTE_DEBUG_MAIL')
+    email: ::getenv('MAIL_ADMIN')
     editor: 'phpstorm://open?file=%file&line=%line'
     editorMapping:
         /in-docker: /Users/jzapletal/www/cms5-sandbox
