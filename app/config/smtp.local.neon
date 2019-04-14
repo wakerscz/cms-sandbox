@@ -1,0 +1,63 @@
+parameters:
+    smtp:
+
+        exceptions:
+            sender:
+                name: ::getenv('MAIL_WEB_NAME')
+                email: ::getenv('SMTP_USERNAME')
+                to: ::getenv('MAIL_ADMIN')
+
+            config:
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: ::getenv('SMTP_PORT')
+                secure: ::getenv('SMTP_SECURE')
+
+
+        resetPassword:
+            sender:
+                #receiver: selected from DB in code
+                name: ::getenv('MAIL_WEB_NAME')
+                email:  ::getenv('SMTP_USERNAME')
+                bcc:
+                    - ::getenv('MAIL_ADMIN')
+
+            config:
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: ::getenv('SMTP_PORT')
+                secure: ::getenv('SMTP_SECURE')
+
+
+        createUser:
+            sender:
+                #receiver: selected from DB in code
+                name: ::getenv('MAIL_WEB_NAME')
+                email: ::getenv('SMTP_USERNAME')
+                bcc:
+                    - ::getenv('MAIL_ADMIN')
+
+            config:
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: ::getenv('SMTP_PORT')
+                secure: ::getenv('SMTP_SECURE')
+
+
+        contactForm:
+            sender:
+                name: ::getenv('MAIL_WEB_NAME')
+                email: ::getenv('SMTP_USERNAME')
+                to: ::getenv('MAIL_CLIENT')
+                bcc:
+                    - ::getenv('MAIL_ADMIN')
+
+            config:
+                host: ::getenv('SMTP_HOST')
+                username: ::getenv('SMTP_USERNAME')
+                password: ::getenv('SMTP_PASSWORD')
+                port: ::getenv('SMTP_PORT')
+                secure: ::getenv('SMTP_SECURE')

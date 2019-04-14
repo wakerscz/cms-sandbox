@@ -1,7 +1,6 @@
 /vendor
 /node_modules
 /www/temp
-/app/config/*.local.neon
 /docker/*.local*
 /docker/nginx/nginx.conf
 /docker-compose.override.yml
