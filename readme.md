@@ -45,7 +45,7 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 ### 2. Spuštění
 1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`.
 1. Sestavení a spuštění Docker containeru `docker-compose up --build --d`.
-1. Vytvoření databáze s kódováním `utf8_general_ci` na [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: yourPassword_1`).
+1. Vytvoření databáze s kódováním `utf8_general_ci` na [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <from-dotenv>`).
 1. Instalace závislostí `./sc composer i` a `./sc npm i`.
 1. Vygenerování assets `./sc npm run gulp-dev`.
 1. Vygenerování DB active-record tříd`./sc propel model:build`.
@@ -56,6 +56,7 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 
 ## Užitečné příkazy
 - Přehled hl. příkazů: `./sc`.
+- Dump databáze: `./sc-dump.sh`.
 - Přepnutí se do Docker containeru: `docker exec -it <container_name> bash`.
 - Spuštění příkazu v containeru: `docker-compose exec <service_name> <commands>`.
 - Kompletní vyčištění dockeru `docker system prune --all -f`.
@@ -64,9 +65,8 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 Po zprovoznění aplikace na serveru je potřeba:
 
 1. Přepsat, případně přidat názvy domén (wakers.cz) v souborech:
-    - `./sc-letsencrypt.sh`.
+    - `./sc-ssl.sh`.
     - `./docker/nginx/servers/production.conf`.
     
 2. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`.
-3. Spustit script `./sc-letsencrypt.sh`.
-4. Přidat cron pro dump DB `crontab -e`, `crontab -l`, `0 4 * * * /<path_to>/sc-dumpdb.sh`.
+3. Spustit script `./sc-ssl.sh`.
