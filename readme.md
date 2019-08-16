@@ -1,6 +1,6 @@
 # Wakers CMS 5
 
-CMS založený na Nette 2.5 a PHP 7.3 | [http://www.wakers.cz/cms](http://www.wakers.cz/cms)
+CMS založený na Nette 2.5 a PHP 7.3 | [http://www.wakers.cz/wakers-cms](http://www.wakers.cz/wakers-cms)
 
 ## O Projektu
 Systém byl vyvinut za účelem zrychlení implementace a následné udržitelnosti projektů. Vše bylo
