@@ -1,6 +1,6 @@
 # Wakers CMS 5
 
-CMS založený na Nette 2.5 a PHP 7.3 | [http://www.wakers.cz/wakers-cms](http://www.wakers.cz/wakers-cms)
+CMS založený na Nette 2.5 a PHP 7.3 | [https://www.wakers.cz/wakers-cms](https://www.wakers.cz/wakers-cms)
 
 ## O Projektu
 Systém byl vyvinut za účelem zrychlení implementace a následné udržitelnosti projektů. Vše bylo
@@ -31,42 +31,43 @@ Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových 
 ## Instalace systému
 
 ### 0. Závislosti pro spuštění
+- Unix **nebo** Windows 10 PRO s [WSL v1](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly) 
 - [Docker desktop](https://www.docker.com/products/docker-desktop): 18.09.1
 - [GIT](https://git-scm.com/downloads): 2.20.1
 - [NodeJS](https://nodejs.org/en/download/): v8.12.2
-- NPM: 6.7.0 `npm i -g npm@6.7.0`
+- NPM: 6.7.0 `npm i -g npm@6.7.0` - nejlépe přes [NVM](https://github.com/nvm-sh/nvm)
 
 ### 1. Konfigurace
-1. Vytvoření projektu `git clone --depth=1  https://github.com/wakerscz/cms-sandbox.git && rm -rf ./cms-sandbox/.git`.
-1. Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`).
-1. Vytvoření `./docker/nginx/nginx.conf` (podle `./docker/nginx/nginx.example.conf`).
-1. Vytvoření `.env` (podle souboru `.env.example`).
+1. Vytvoření projektu `git clone --depth=1  https://github.com/wakerscz/cms-sandbox.git && rm -rf ./cms-sandbox/.git`
+1. Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`)
+1. Vytvoření `./docker/nginx/nginx.conf` (podle `./docker/nginx/nginx.example.conf`)
+1. Vytvoření `.env` (podle souboru `.env.example`)
 
 ### 2. Spuštění
-1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`.
-1. Sestavení a spuštění Docker containeru `docker-compose up --build --d`.
-1. Vytvoření databáze `wakers_cms_db` s kódováním `utf8_general_ci` na [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <from-dotenv>`).
-1. Instalace závislostí `./sc composer i` a `./sc npm i`.
-1. Vygenerování assets `./sc npm run gulp-dev`.
-1. Vygenerování DB active-record tříd`./sc propel model:build`.
-1. Vytvoření databázových tabulek `./sc propel migration:migrate`.
-1. Vytvoření jazyku `./sc console wakers:lang-create <lang>`.
-1. Vytvoření (všech) úvodních stránek `./sc console wakers:homepage-create <defaultLang> [layoutName=home.latte]`.
-1. Vytvoření admina `./sc console wakers:admin-create <email> <password>`.
+1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`
+1. Sestavení a spuštění Docker containeru `docker-compose up --build --d`
+1. Vytvoření databáze `wakers_cms_db` s kódováním `utf8_general_ci` na [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <from-dotenv>`)
+1. Instalace závislostí `./sc composer i` a `./sc npm i`
+1. Vygenerování assets `./sc npm run gulp-dev`
+1. Vygenerování DB active-record tříd`./sc propel model:build`
+1. Vytvoření databázových tabulek `./sc propel migration:migrate`
+1. Vytvoření jazyku `./sc console wakers:lang-create <lang>`
+1. Vytvoření (všech) úvodních stránek `./sc console wakers:homepage-create <defaultLang> [layoutName=home.latte]`
+1. Vytvoření admina `./sc console wakers:admin-create <email> <password>`
 
 ## Užitečné příkazy
-- Přehled hl. příkazů: `./sc`.
-- Dump databáze: `./sc-dump.sh`.
-- Přepnutí se do Docker containeru: `docker exec -it <container_name> bash`.
-- Spuštění příkazu v containeru: `docker-compose exec <service_name> <commands>`.
-- Kompletní vyčištění dockeru `docker system prune --all -f`.
+- Přehled hl. příkazů: `./sc`
+- Dump databáze: `./sc-dump.sh`
+- Přepnutí se do Docker containeru: `docker exec -it <container_name> bash`
+- Spuštění příkazu v containeru: `docker-compose exec <service_name> <commands>`
+- Kompletní vyčištění dockeru `docker system prune --all -f`
 
 ## Deploy
 Po zprovoznění aplikace na serveru je potřeba:
 
 1. Přepsat, případně přidat názvy domén (wakers.cz) v souborech:
-    - `./sc-ssl.sh`.
-    - `./docker/nginx/servers/production.conf`.
-    
-2. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`.
-3. Spustit script `./sc-ssl.sh`.
+    - `./sc-ssl.sh`
+    - `./docker/nginx/servers/production.conf`
+2. Spustit script `./sc-ssl.sh`
+3. V souboru `./docker/nginx/nginx.conf` změnit `include servers/development.conf;`  na `include servers/production.conf;`
+4. Restartovat nginx / docker `docker-compose restart`
