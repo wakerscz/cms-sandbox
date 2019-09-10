@@ -1,6 +1,7 @@
 #!/bin/bash
 
-domains=(www.wakers.cz wakers.cz)
+# First without www.
+domains=(wakers.cz www.wakers.cz)
 email="info@wakers.cz"
 
 data_path="./docker/certbot.local"
