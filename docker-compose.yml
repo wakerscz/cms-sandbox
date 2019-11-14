@@ -1,10 +1,9 @@
 version: '3'
 
 services:
-
   app:
     build: .
-    restart: "always"
+    restart: unless-stopped
     working_dir: /in-docker
     volumes:
       # PHP Configs
@@ -21,13 +20,20 @@ services:
       - ./vendor:/in-docker/vendor:cached
     expose:
       - 9000
+    depends_on:
+      - nginx
+      - mariadb
+    links:
+      - nginx
+      - mariadb
+      - sftp
+      - adminer
     networks:
       - wakers-network
 
-
   nginx:
     image: nginx:1.15.4-alpine
-    restart: "always"
+    restart: unless-stopped
     volumes:
       # Nginx config
       - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
@@ -53,7 +59,11 @@ services:
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     depends_on:
       - app
-
+    links:
+      - app
+      - mariadb
+      - sftp
+      - adminer
 
   certbot:
     image: certbot/certbot
@@ -68,10 +78,9 @@ services:
     depends_on:
       - nginx
 
-
   mariadb:
     image: mariadb:10.4.2
-    restart: "always"
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     command: mysqld --innodb-flush-method=littlesync --innodb-use-native-aio=OFF --log_bin=ON
@@ -83,18 +92,16 @@ services:
     networks:
       - wakers-network
 
-
   adminer:
     image: dockette/adminer:dg
-    restart: "always"
+    restart: unless-stopped
     ports:
       - 9876:80
     networks:
       - wakers-network
 
-
   sftp:
-    restart: "always"
+    restart: unless-stopped
     image: atmoz/sftp:alpine-3.7
     volumes:
       - ./docker/mariadb:/home/${SFTP_USER}/docker/mariadb:ro
@@ -107,7 +114,6 @@ services:
     command: ${SFTP_USER}:${SFTP_PASSWORD}:1001
     networks:
       - wakers-network
-
 
 networks:
   wakers-network:
