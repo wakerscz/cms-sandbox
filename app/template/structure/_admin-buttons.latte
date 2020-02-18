@@ -1,0 +1,70 @@
+{**
+ * Copyright (c) 2020 Wakers.cz
+ * @author Jiří Zapletal (http://www.wakers.cz, zapletal@wakers.cz)
+ *}
+
+{define btn-structure-add}
+    {if $user->isAllowed(Wakers\BaseModule\Security\BaseAuthorizator::RES_IN_PAGE_MANAGER)}
+        <div class="{ifset $settings['class']}{$settings['class']}{/ifset}">
+            <a href="#"
+               class="wakers_btn btn_small inverse"
+
+               data-ajax-link="{plink structureStructureModal:Open! 'recipeSlug' => $settings['slug'], 'structureId' => NULL, 'isNew' => TRUE}"
+               data-wakers-tooltip="{$settings['add']}"
+               data-wakers-progress-button
+            >
+                +
+            </a>
+        </div>
+    {/if}
+{/define}
+
+{define btn-structure-edrm}
+    {if $user->isAllowed(Wakers\BaseModule\Security\BaseAuthorizator::RES_IN_PAGE_MANAGER)}
+        <div class="{ifset $settings['class']}{$settings['class']}{/ifset}">
+            <a href="#"
+               class="wakers_btn btn_small inverse"
+
+               data-ajax-link="{plink structureStructureModal:Open! 'recipeSlug' => $settings['slug'], 'structureId' => $settings['id'], 'isNew' => FALSE}"
+               data-wakers-tooltip="{$settings['edit']}"
+               data-wakers-progress-button
+            >
+                &#x270E;
+            </a>
+
+            <a href="#"
+               class="wakers_btn btn_small inverse"
+
+               data-ajax-link="{plink structureStructureRemoveModal:Open! 'id' => $settings['id']}"
+               data-wakers-tooltip="{$settings['remove']}"
+               data-wakers-progress-button
+            >
+                &#x267A;
+            </a>
+        </div>
+    {/if}
+{/define}
+
+{define btn-page-add}
+    {if $user->isAllowed(Wakers\BaseModule\Security\BaseAuthorizator::RES_IN_PAGE_MANAGER)}
+        <div class="{ifset $settings['class']}{$settings['class']}{/ifset}">
+            <a href="#"
+               class="wakers_btn btn_small inverse"
+
+               data-ajax-link="{plink pageAddModal:Open! 'view' => $settings['view'], 'parentPageId' => $settings['parentPageId']}"
+               data-wakers-tooltip="{$settings['add']}"
+               data-wakers-progress-button
+            >
+                +
+            </a>
+        </div>
+    {/if}
+{/define}
+
+{define published}
+    {if $user->isAllowed(Wakers\BaseModule\Security\BaseAuthorizator::RES_IN_PAGE_MANAGER) && !$row->isPagePublished()}
+        <div class="wakers_alert red {ifset $settings['class']}{$settings['class']}{/ifset}">
+            Cílová pod-stránka není publikována, tuto položku vidíte pouze jako admin.
+        </div>
+    {/if}
+{/define}
