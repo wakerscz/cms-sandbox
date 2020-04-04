@@ -74,8 +74,10 @@ services:
     restart: "always"
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
-    command: mysqld --innodb-flush-method=littlesync --innodb-use-native-aio=OFF --log_bin=ON
+      MYSQL_DATABASE: wakers_cms_db
     volumes:
+      # Config
+      - ./docker/mariadb/config.cnf:/etc/mysql/conf.d/custom.cnf
       # Mariadb folder
       - ./docker/mariadb.local:/var/lib/mysql:cached
       # Dumps

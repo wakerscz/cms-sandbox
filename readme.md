@@ -40,21 +40,19 @@ Video ukázka správy webu ve Wakers CMS na [Youtube](https://youtu.be/hyPnYBGSZ
 
 ### 0. Závislosti pro spuštění
 - Unix **nebo** Windows 10 PRO s [WSL v1](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly) 
-- [Docker desktop](https://www.docker.com/products/docker-desktop): 18.09.1
-- [GIT](https://git-scm.com/downloads): 2.20.1
-- [NodeJS](https://nodejs.org/en/download/): v8.12.2
-- NPM: 6.7.0 `npm i -g npm@6.7.0` - nejlépe přes [NVM](https://github.com/nvm-sh/nvm)
+- [Docker desktop](https://www.docker.com/products/docker-desktop) >= 18.09.1
+- [GIT](https://git-scm.com/downloads) >= 2.20.1
+- [NodeJS](https://nodejs.org/en/download/): v8.12.2 - nejlépe přes [NVM](https://github.com/nvm-sh/nvm)
+- NPM: 6.7.0 `npm i -g npm@6.7.0`
 
 ### 1. Konfigurace
-1. Vytvoření projektu `git clone --depth=1  https://github.com/wakerscz/cms-sandbox.git && rm -rf ./cms-sandbox/.git`
-1. Vytvoření `./docker-compose.override.yml` (podle `./docker-compose.example.yml`)
-1. Vytvoření `./docker/nginx/nginx.conf` (podle `./docker/nginx/nginx.example.conf`)
-1. Vytvoření `.env` (podle souboru `.env.example`)
+1. Vytvoření souboru `cp ./docker-compose.example.yml ./docker-compose.override.yml`
+1. Vytvoření souboru `cp ./docker/nginx/nginx.example.conf ./docker/nginx/nginx.conf`
+1. Vytvoření souboru `cp .env.example .env`
 
 ### 2. Spuštění
 1. Zastavení všech Docker containerů `docker stop $(docker ps -a -q)`
 1. Sestavení a spuštění Docker containeru `docker-compose up --build --d`
-1. Vytvoření databáze `wakers_cms_db` s kódováním `utf8_general_ci` na [http://localhost:9876](http://localhost:9876) (`s: mariadb`, `u: root`, `p: <from-dotenv>`)
 1. Instalace závislostí `./sc composer i` a `./sc npm i`
 1. Vygenerování assets `./sc npm run gulp-dev`
 1. Vygenerování DB active-record tříd`./sc propel model:build`
@@ -69,6 +67,7 @@ Video ukázka správy webu ve Wakers CMS na [Youtube](https://youtu.be/hyPnYBGSZ
 - Přepnutí se do Docker containeru: `docker exec -it <container_name> bash`
 - Spuštění příkazu v containeru: `docker-compose exec <service_name> <commands>`
 - Kompletní vyčištění dockeru `docker system prune --all -f`
+- Adminer: [localhost:9876](http://localhost:9876)
 
 ## Deploy
 Po zprovoznění aplikace na serveru je potřeba:
