@@ -30,7 +30,7 @@ wakers_resolve_permissions()
 
 wakers_console()
 {
-    rm -rf ./temp/cache/*
+    #rm -rf ./temp/cache/*
     docker-compose exec app php ./www/index.php ${@}
 }
 
