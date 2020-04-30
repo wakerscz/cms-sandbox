@@ -17,7 +17,7 @@
         "gulp-hash": "^4.2.2",
         "gulp-sass": "^4.0.2",
         "gulp-uglify": "^3.0.1",
-        "jquery": "^3.4.0",
+        "jquery": "^3.5.0",
         "live-form-validation": "github:contributte/live-form-validation#cfb4c1a2c9102b5c6b198a04bb579ee83bf9b5e8",
         "lobibox": "^1.2.7",
         "nette.ajax.js": "^2.3.0",
