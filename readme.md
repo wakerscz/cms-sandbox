@@ -15,17 +15,6 @@ Druhou obrovskou výhodou je UI pro správu webu - administrátoři stránku edi
 Nemají k dispozici zbytečné funkce a jsou omezeni, aby zcela nenarušili vizuální podobu a celý smysl webu.
 
 Jako freelanceři se vývojem tohoto CMS snažíme posouvat vpřed. 
-Vše je zatím v alfa verzi - další mantrou je ztransparentnění zdrojových kódů a vytvoření (na sobě) nezávislých modulů.
-
-### [Video-ukázka CMS](https://youtu.be/hyPnYBGSZy0)
-
-Video ukázka správy webu ve Wakers CMS na [Youtube](https://youtu.be/hyPnYBGSZy0). 
-
-[![Video - Proč Wakers CMS](readme-youtube.png)](https://youtu.be/hyPnYBGSZy0)
-
-### Video-ukázka implementace
-
-**TODO:** Jak implementovat one-page web (na míru) za 15 minut.
 
 ## Seznam výchozích modulů
 1. [Base Module](http://www.github.com/wakerscz/cms-base-module)
